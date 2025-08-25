@@ -1,0 +1,59 @@
+Run finished at Fri Aug  8 18:13:10 2025
+Global runtime       = 1.14565e+07ms / 11456.5s
+Number of processors = 1
+# Rank: 0
+
+                                                                      Event |      Count |  Total[ms] |    Max[ms] |    Min[ms] |    Avg[ms] | Time Ratio |
+-----------------------------------------------------------------------------------------------------------------------------------------------------------
+                                                                    _GLOBAL |          1 |   11456483 |   11456483 |   11456483 |   11456483 |          1 |
+                                                                    advance |     100000 |    8750340 |       8999 |          0 |         87 |      0.764 |
+                                                    advance/m2n.receiveData |       1000 |    8715379 |       8996 |       8583 |       8715 |      0.761 |
+                                                       advance/m2n.sendData |       1000 |        394 |          1 |          0 |          0 |   3.44e-05 |
+                    advance/map.nn.computeMapping.Fromhegel_wallToSolidMesh |          1 |         15 |         15 |         15 |         15 |   1.31e-06 |
+ advance/map.nn.computeMapping.Fromhegel_wallToSolidMesh.getIndexOnVertices |          1 |          0 |          0 |          0 |          0 |          0 |
+                           advance/map.nn.mapData.Fromhegel_wallToSolidMesh |       1000 |         98 |          0 |          0 |          0 |   8.55e-06 |
+                          advance/query.index.getVertexIndexTree.hegel_wall |          1 |          3 |          3 |          3 |          3 |   2.62e-07 |
+                                                                  configure |          1 |          1 |          1 |          1 |          1 |   8.73e-08 |
+                                                                   finalize |          1 |    1453668 |    1453668 |    1453668 |    1453668 |      0.127 |
+                                                                 initialize |          1 |        198 |        198 |        198 |        198 |   1.73e-05 |
+                                      initialize/m2n.acceptMasterConnection |          1 |          4 |          4 |          4 |          4 |   3.49e-07 |
+                                      initialize/m2n.acceptSlavesConnection |          1 |        104 |        104 |        104 |        104 |   9.08e-06 |
+                                initialize/m2n.broadcastVertexDistributions |          2 |          0 |          0 |          0 |          0 |          0 |
+                                       initialize/m2n.buildCommunicationMap |          2 |          0 |          0 |          0 |          0 |          0 |
+                                        initialize/m2n.createCommunications |          2 |          7 |          4 |          3 |          3 |   6.11e-07 |
+                                  initialize/m2n.exchangeVertexDistribution |          2 |         93 |         48 |         45 |         46 |   8.12e-06 |
+                                  initialize/partition.gatherMesh.SolidMesh |          1 |          0 |          0 |          0 |          0 |          0 |
+                                 initialize/partition.prepareMesh.SolidMesh |          1 |          0 |          0 |          0 |          0 |          0 |
+                          initialize/partition.receiveGlobalMesh.hegel_wall |          1 |         85 |         85 |         85 |         85 |   7.42e-06 |
+                              initialize/partition.sendGlobalMesh.SolidMesh |          1 |          0 |          0 |          0 |          0 |          0 |
+                                                             initializeData |          1 |          1 |          1 |          1 |          1 |   8.73e-08 |
+                                                             solver.advance |     100000 |    1248740 |         37 |          0 |         12 |      0.109 |
+                                                          solver.initialize |          1 |         30 |         30 |         30 |         30 |   2.62e-06 |
+
+
+                                                                       Name |        Max |  MaxOnRank |        Min |  MinOnRank |    Min/Max |
+----------------------------------------------------------------------------------------------------------------------------------------------
+                                                                    _GLOBAL | 1.14565e+07 |          0 | 1.14565e+07 |          0 |          1 |
+                                                                    advance |       8999 |          0 |          0 |          0 |          0 |
+                                                    advance/m2n.receiveData |       8996 |          0 |       8583 |          0 |   0.954091 |
+                                                       advance/m2n.sendData |          1 |          0 |          0 |          0 |          0 |
+                    advance/map.nn.computeMapping.Fromhegel_wallToSolidMesh |         15 |          0 |         15 |          0 |          1 |
+ advance/map.nn.computeMapping.Fromhegel_wallToSolidMesh.getIndexOnVertices |          0 |          0 |          0 |          0 |          0 |
+                           advance/map.nn.mapData.Fromhegel_wallToSolidMesh |          0 |          0 |          0 |          0 |          0 |
+                          advance/query.index.getVertexIndexTree.hegel_wall |          3 |          0 |          3 |          0 |          1 |
+                                                                  configure |          1 |          0 |          1 |          0 |          1 |
+                                                                   finalize | 1.45367e+06 |          0 | 1.45367e+06 |          0 |          1 |
+                                                                 initialize |        198 |          0 |        198 |          0 |          1 |
+                                      initialize/m2n.acceptMasterConnection |          4 |          0 |          4 |          0 |          1 |
+                                      initialize/m2n.acceptSlavesConnection |        104 |          0 |        104 |          0 |          1 |
+                                initialize/m2n.broadcastVertexDistributions |          0 |          0 |          0 |          0 |          0 |
+                                       initialize/m2n.buildCommunicationMap |          0 |          0 |          0 |          0 |          0 |
+                                        initialize/m2n.createCommunications |          4 |          0 |          3 |          0 |       0.75 |
+                                  initialize/m2n.exchangeVertexDistribution |         48 |          0 |         45 |          0 |     0.9375 |
+                                  initialize/partition.gatherMesh.SolidMesh |          0 |          0 |          0 |          0 |          0 |
+                                 initialize/partition.prepareMesh.SolidMesh |          0 |          0 |          0 |          0 |          0 |
+                          initialize/partition.receiveGlobalMesh.hegel_wall |         85 |          0 |         85 |          0 |          1 |
+                              initialize/partition.sendGlobalMesh.SolidMesh |          0 |          0 |          0 |          0 |          0 |
+                                                             initializeData |          1 |          0 |          1 |          0 |          1 |
+                                                             solver.advance |         37 |          0 |          0 |          0 |          0 |
+                                                          solver.initialize |         30 |          0 |         30 |          0 |          1 |

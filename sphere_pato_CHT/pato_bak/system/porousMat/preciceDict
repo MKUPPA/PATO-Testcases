@@ -1,0 +1,41 @@
+FoamFile
+{
+  version     2.0;
+  format      ascii;
+  class       dictionary;
+  location    "system";
+  object      preciceDict;
+}
+
+preciceConfig "../precice-config.xml";
+
+participant SolidSolver;
+
+modules (PATO);
+
+interfaces
+{
+  Interface
+    {
+      mesh            SolidMesh;
+      patches         (outer);
+    
+      readData
+	(
+	q
+	p
+	 );
+  
+      writeData
+	(
+	T
+        );
+	};
+};
+
+//- This option are only valid for HEGEL - PATO coupling
+PATO
+{
+  //- heat transfer
+  conductionTransfer true;    //- explicit coupling interface : enable conduction
+}	 

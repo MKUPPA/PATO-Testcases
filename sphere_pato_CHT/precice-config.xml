@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<precice-configuration>
+  <log>
+    <sink
+      type="stream"
+      output="stdout"
+      filter="%Severity% > debug"
+      format="preCICE:%ColorizedSeverity% %Message%"
+      enabled="true" />
+  </log>
+
+  <solver-interface dimensions="2">
+    <data:scalar name="q"/>
+    <data:scalar name="T"/>
+
+    <mesh name="hegel_wall">
+      <use-data name="q"/>
+      <use-data name="T"/>
+    </mesh>
+
+    <mesh name="SolidMesh">
+      <use-data name="q"/>
+      <use-data name="T"/>
+    </mesh>
+
+    <participant name="HEGEL">
+      <use-mesh name="hegel_wall" provide="yes"/>
+      <use-mesh name="SolidMesh" from="SolidSolver"/>
+      <write-data name="q" mesh="hegel_wall"/>
+      <read-data  name="T" mesh="hegel_wall"/>
+      <mapping:nearest-neighbor direction="read" from="SolidMesh" 
+                                to="hegel_wall" constraint="consistent"/>
+    </participant>
+
+    <participant name="SolidSolver">
+      <use-mesh name="SolidMesh" provide="yes"/>
+      <use-mesh name="hegel_wall" from="HEGEL"/>
+      <write-data name="T" mesh="SolidMesh"/>
+      <read-data name="q" mesh="SolidMesh"/>
+      <mapping:nearest-neighbor direction="read" from="hegel_wall" 
+                                to="SolidMesh" constraint="consistent"/>
+    </participant>
+
+    <m2n:sockets from="HEGEL" to="SolidSolver" />
+
+    <coupling-scheme:parallel-explicit>
+      <participants first="HEGEL" second="SolidSolver"/>
+      <time-window-size value="0.0001" />
+      <max-time value="1e-1"/>
+      <exchange data="q" mesh="hegel_wall" from="HEGEL" to="SolidSolver"/>
+      <exchange data="T" mesh="SolidMesh" from="SolidSolver" to="HEGEL"/>
+    </coupling-scheme:parallel-explicit>
+  </solver-interface>
+</precice-configuration>
