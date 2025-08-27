@@ -1,4 +1,7 @@
 ## Core latex/pdflatex auxiliary files:
+*.nav
+*.snm
+*.synctex.gz
 *.aux
 *.lof
 *.log
@@ -41,6 +44,6 @@
 *~
 
 ## VLM local folders
-PATO_DOC/DATA
-PATO_DOC/REFERENCES
-PATO_DOC/FIGURES
+PATO_DOC/DATA/
+PATO_DOC/REFERENCE/
+# PATO_DOC/FIGURES/
