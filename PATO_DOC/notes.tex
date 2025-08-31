@@ -59,7 +59,10 @@
 	and its effects on in-depths energy transport will close 
 	this note. The main literature sources used to write these
 	notes are the following: \cite{Lachaud2017}, 
-	\cite{Marschall2015} and \cite{Johnston2014}.
+	\cite{Marschall2015} and \cite{Johnston2014}. For 
+	porous material literature, the results presented in this 
+	note are demonstrated in general books such as 
+	\cite{Whitaker1999}.
 
 	%-----------------------------------------
 	\section{TPS Physical Modelling}
@@ -83,11 +86,11 @@
 	 (see Figure \ref{figure1_1}).  The imposed temperature 
 	 is chosen to be representative of temperature usually 
 	 encountered over TPS surface such as it is expected it 
-	 will trigger pyrolysis in the future
+	 will trigger pyrolysis in the future.
 	\begin{figure}[h]
 	\centering
 	\begin{tikzpicture}[scale=2]
-	\filldraw[color=gray!20, draw=black]
+	\filldraw[color=gray!50, draw=black]
   	(0, 0) -- (0, 2) -- (0.5, 2) -- (0.5, 0) -- cycle;
   	%\draw[->, color=red] (0.0, 2.5) -- (0.0, 2.01) ;
   	%\draw[->, color=red] (0.25, 2.5) -- (0.25, 2.01) ;
@@ -100,10 +103,11 @@
 	\caption{\label{figure1_1} Schematic of the 
 	configuration studied in the next section.}
 	\end{figure}
+	\newline
 	 If the material is assumed to be non porous such
 	 as passive materials, the description of energy transport
-	 is generally assumes to follow the Fourier law which
-	 reads as :
+	 is generally assumes to follow the Fourier 
+	 law \cite{Hahn2012} which reads as :
 	 \begin{align}
 	 \frac{\partial }{\partial t} \left(\rho^s c_p^s T^s \right)
 	 - \nabla \left( \lambda^s \nabla T^s \right) &
@@ -123,9 +127,15 @@
 	 indexed as $^{s_1}, ^{s_2},  ..., ^{s_n}$ following the
 	 notation in \cite{Marschall2015}. 
 	 In equation \eqref{energy_1}, the assumption of solid 
-	 material energy $e^s = c_p^s T^s$ has been made.
+	 material energy $e^s = c_v^s T^s$ has been made. 
+	 For an incompressible solid, $c_v^s = c_p^s$, 
+	 \cite{Hahn2012}, and most often the literature is 
+	 using the notation in equation \eqref{energy_1} to
+	 describe the energy distribution in time
+	  \cite{Lachaud2017}.
 	 Equation \eqref{mass_1} translates the fact that for
-	 a non porous material, there is no variation of material
+	 a non porous and incompressible material,
+	  there is no variation of material
 	 density \textit{a priori}. 
 	 Any phase change or heterogeneous chemical 
 	 reactions are 
@@ -139,14 +149,40 @@
 	 the sake of simplicity, the material properties $c_p^s$ 
 	 and $\lambda^s$ has been chosen constant and are 
 	 reported on Table \ref{table1_1}. In that configuration, 
-	 an analytical solution exists \cite{Hahn2012}
+	 an analytical solution exists \cite{Hahn2012} (
+	 \textcolor{red}{TO DO: FIND IT !}
+	 ).
 	 
+	\begin{figure}[h]
+	\centering
+	\includegraphics[scale=0.5, angle=0]{FIGURES/CONDUCTION}
+	\caption{\label{figure1_2} Solution of the pure 
+	conduction model \eqref{energy_1}-\eqref{mass_1}
+	in time.}
+	\end{figure}
+	
+	\begin{table}[h]
+	\centering
+	\begin{tabular}{|c|c|}
+	\hline
+	$\rho^s \, \left[\text{kg}/\text{m}^3 \right]$ & 1600 \\ 
+	$c_p^s \, \left[\text{J}/\text{kg}/\text{K} \right]$ &
+	 732.7  \\ 
+	 $\lambda^s \, \left[\text{W}/\text{m}/\text{K} \right]$ 
+	 & 0.3975  \\ 
+	\hline
+	\end{tabular}
+	\caption{\label{table1_1} Parameters for pure the
+	conduction problem \eqref{energy_1}-\eqref{mass_1}.}
+	\end{table}
+	
 	 It can be noted that
 	 as previously said, this example is artificial in the sense
 	 that there are currently no dissipative processes 
 	 occurring on the top boundary of the numerical
 	 domain. Consequently, surface temperature 
-	 keeps increasing whereas in reality :
+	 keeps increasing to the prescribed temperature
+	 whereas in reality :
 	 \begin{itemize}
 	 \item Radiative cooling would \textbf{bound}
 	  the surface 
@@ -158,9 +194,8 @@
 	  sublimation...)
 	  \item The surface heat flux is directly provided by the 
 	  thermal state of the boundary layer. The use of a 
-	  \textbf{constant} non-homogeneous 
-	  Neumann boundary 
-	  conditions is physically irrelevant, as the effect of
+	  \textbf{constant} Dirichlet boundary condition
+	   is physically irrelevant, as the effect of
 	  convective heating over the material is reduced as 
 	  surface temperature rises (let's consider for example
 	  a simple Newton's approximation for boundary layer
@@ -173,6 +208,149 @@
 	  the boundary layer, the heat flux sign would reverse, 
 	  and the fluid would cool down the surface.
 	 \end{itemize} 
+	 
+	 \subsection{Heat Transfer in a porous material}
+	 \label{section1_2}
+	 
+	 Let now assume that the material is not completely solid,
+	 but has \textbf{connected} holes inside which are making
+	 it \textbf{porous} (\textit{c.f.} Figure \ref{figure2_1}).
+	 The pores are filled with gas, and the
+	 molecules composing this air are subjected to the same 
+	 processes that are affecting the gas phase in the
+	 hypersonic region.  
+	\begin{figure}[h]
+	\centering
+	\begin{tikzpicture}[scale=2]
+	\filldraw[color=gray!50, draw=black]
+  	(1, 0) -- (1, 2) -- (1.5, 2) -- (1.5, 0) -- cycle;
+  	\draw (1.25, 2.) node[above]{$T_{\text{imp}} = 
+  	2000K$} ;
+  	\draw (1.25, 0) node[below]
+  	{$\overrightarrow{Q} = 0$} ;
+  	\draw[draw=black] (1.2, 1.7) circle (0.1) ;
+  	\draw[draw=black, dashed] (1.2, 1.8) -- (-1, 2) ;
+  	\draw[draw=black, dashed] (1.2, 1.6) -- (-1, 0.4) ;
+  	\filldraw[color=white!30, draw=black] 
+	(-1, 1.2) circle (0.8) ;
+	  	\draw (-1, 0.4) node[below]
+  	{microscopic structure} ;
+  	\filldraw[color=black, draw=black] 
+  	(-0.8, 1.1) circle (0.2) ;
+  	\draw (-0.8, 0.9) node[below]{$s_1$};
+  	 \filldraw[color=black, draw=black] 
+  	(-0.5, 1.6) circle (0.15) ;
+  	\draw (-0.5, 1.45) node[below]{$s_1$};
+  	 \filldraw[color=black, draw=black] 
+  	(-1.5, 1.1) circle (0.25) ;
+  	\draw (-1.5, 0.85) node[below]{$s_1$};
+  	 \filldraw[color=black, draw=black] 
+  	(-1.2, 1.55) circle (0.2) ;
+  	\draw (-1.15, 1.35) node[below]{$s_1$};
+  	\filldraw[color=black, draw=black] 
+  	(-1.15, 0.65) circle (0.1) ;
+  	\draw (-1.15, 0.75) node[above]{$s_1$};
+	\end{tikzpicture}
+	\caption{\label{figure2_1} Despite their multiphase 
+	intrinsic characteristics at a \textbf{microscopic} level of
+	description, transfer in TPS are described at the 
+	\textbf{macroscopic} level of description.}
+	\end{figure}
+	Nevertheless, the temperature of the
+  material is often lower that the post-shock region, which 
+  allows for several simplifying hypothesis.
+  \begin{itemize}
+	\item It is usually assumed that heat transfer 
+	within individual solid and gas phase is much faster than
+	the transfer of energy within the material (\textit{i.e.} the
+	microscopic Peclet number is far lower than macroscopic 
+	Peclet number). This allow to consider that at each 
+	location of the material, the gas phase and the solid phase
+	are at the same temperature.
+	\item Depending of the material porosity $\phi^s$, it
+	is usually assumed that flow of gas phase within the pore
+	are slow enough such as the gas phase is assumed to be
+	in chemical equilibrium at any time. This permits to 
+	discard \textit{a priori} any finite rate consideration when
+	computing gas phase composition and transport 
+	properties.
+	\end{itemize}
+	Lets consider a material of porosity $\phi^s$ which 
+	corresponds to the microscopic ratio of the solid phase $s$
+	over the total Representative Elementary Volume 
+	(REV)\cite{Whitaker1999} characterizing the material:
+	\begin{align}
+	\label{porosity_eq}
+	\phi^s = \frac{1}{V}\iiint \mathcal{H}_s(x) \,
+	 \mathrm{d}V
+	\\ \label{heavy_material}
+	\mathcal{H}_s(x)  = 
+	\begin{cases} 
+	1 & \text{if } x \in s \\
+	0 & \text{if } x \notin s
+	\end{cases}
+	\end{align}
+	When several materials will be considered, a function 
+	$\mathcal{H}_{s_i}$ would be consider of each solid 
+	phase $i$ present in the REV, 
+	such as equation \eqref{porosity_eq} naturally apply for
+	each material component. In the same spirit, 
+	the gas phase
+	volume fraction can be computed by equation
+	\eqref{porosity_eq} and is noted $\phi^g$.
+	The equation of mass conservation of the gas phase 
+	reads \cite{Whitaker1999}:
+	\begin{equation}
+	\label{transport_1_2}
+	\frac{\partial}{\partial t} \left( \phi^g \rho^g\right)
+	+ \nabla \cdot \left(\phi^g \rho^g\mathbf{v}^g \right)
+	= 0
+	\end{equation}
+	In equation \eqref{transport_1_2}, the right hand side 
+	is purposely set to 0 to meet the hypothesis previously 
+	stated that the gas phase is mostly in an chemical 
+	equilibrium state while flowing within the material. For this
+	reason, no source terms are considered for mass 
+	exchange between gaseous species. \\
+	Although it is not mandatory, the software PATO is 
+	solving a different equation than \eqref{transport_1_2} to
+	compute the transport of gas phase in the material. As
+	the gas is in equilibrium, the calorific perfect gas 
+	assumption permits to write :
+	\begin{equation}
+	\label{perfect_gas}
+	p^g = \frac{\rho^g RT }{M^g}
+	\end{equation}
+	We not that phase temperature is not phase-distinct in 
+	equation \eqref{perfect_gas} correspondingly with the 
+	first hypothesis on the material, which states that locally
+	$T^g = T^s = T$. Furthermore, the gas phase velocity
+	in a porous media can be described using Darcy law
+	\cite{Whitaker1999} :
+	\begin{equation}
+	\label{Darcy}
+	\mathbf{v}^g = -\frac{1}{\phi^g\mu^g} 
+	\underline{\mathbf{K}}
+	\nabla p^g
+	\end{equation}
+	With $\underline{\mathbf{K}}$ the permeability tensor 
+	and $\mu^g$ the gas phase viscosity. Using equation 
+	\eqref{perfect_gas} and \eqref{Darcy} in equation 
+	\eqref{transport_1_2} yields the PATO gas phase 
+	non-linear transport equation \cite{Lachaud2017}:
+	\begin{equation}
+	\label{transport_1_2_2}
+	\frac{\partial}{\partial t} \left( \phi^g 
+	\frac{p^g M^g}{RT}\right)
+	+ \nabla \cdot \left(- \frac{p^g M^g}{RT\mu^g}
+	\underline{\mathbf{K}} \nabla p^g \right)
+	= 0
+	\end{equation}
+	Such as the material internal gas phase pressure $p^g$ 
+	can be computed for each time with equation 
+	\eqref{transport_1_2_2}. It now remains to model 
+	the transport of energy through the gas phase.
+	
 	
 	%-----------------------------------------
 	\section{Surface Balance for TPS}
