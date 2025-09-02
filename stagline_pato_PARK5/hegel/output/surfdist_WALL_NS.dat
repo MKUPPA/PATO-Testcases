@@ -1,0 +1,3 @@
+# HEGEL:: NS surface quantity file for 'WALL' patch
+# x [m]  qn [W/m^2]  p [Pa]  T [K]  tau_xx [Pa]  tau_xy [Pa]  tau_yy [Pa]
+  0.40000000E+00   0.19783558E+06   0.82960632E+04   0.32632943E+03  -0.42244523E-03   0.81231173E+02   0.21122262E-03

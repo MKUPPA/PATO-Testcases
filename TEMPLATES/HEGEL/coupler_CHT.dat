@@ -1,0 +1,21 @@
+#---------------------------!
+#This file provides the data to be exchanged via the coupler
+
+[GENERAL] 
+
+#surface(s)  
+SURFACE = WALL
+
+#---------------------------!
+# Surface coupling
+
+[WALL]
+
+#boundary name
+BOUND = WALL
+
+#quantities to be exchanged (vectors and scalars)
+SCALAR_VAR_IN  = T 
+SCALAR_VAR_OUT = q 
+
+#VECTOR_VAR_IN  = mdot

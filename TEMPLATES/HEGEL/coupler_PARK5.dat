@@ -1,0 +1,18 @@
+#---------------------------!
+#This file provides the data to be exchanged via the coupler
+
+[GENERAL] 
+
+#surface(s)  
+SURFACE = WALL
+
+#---------------------------!
+# Surface coupling
+
+[WALL]
+
+BOUND = WALL
+
+VECTOR_VAR_IN  = mdot
+SCALAR_VAR_IN  = T y_em y_N y_O y_C y_N2 y_NO y_O2 y_CO y_CO2 y_CN y_C2 y_C3 y_N2p y_NOp y_Np y_O2p y_Op y_COp y_CNp y_Cp
+SCALAR_VAR_OUT = q p flux_em flux_N flux_O flux_C flux_N2 flux_NO flux_O2 flux_CO flux_CO2 flux_CN flux_C2 flux_C3 flux_N2p flux_NOp flux_Np flux_O2p flux_Op flux_COp flux_CNp flux_Cp

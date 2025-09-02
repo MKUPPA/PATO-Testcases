@@ -1,0 +1,114 @@
+FoamFile
+{
+  version     2.0;
+  format      ascii;
+  class       dictionary;
+  location    "system";
+  object      preciceDict;
+}
+
+preciceConfig "../precice-config.xml";
+
+participant SolidSolver;
+
+modules (PATO);
+
+interfaces
+{    
+  Interface
+    {
+      mesh              SolidMeshFace;
+      patches           (interface);
+    
+      readData
+	(
+	 q
+	 p
+	 // flux_em
+	 // flux_N
+	 // flux_O
+	 // flux_C
+	 // flux_N2
+	 // flux_NO
+	 // flux_O2
+	 // flux_CO
+	 // flux_CO2
+	 // flux_CN
+	 // flux_C2
+	 // flux_C3
+	 // flux_N2p 
+	 // flux_NOp 
+	 // flux_Np 
+	 // flux_O2p 
+	 // flux_Op 
+	 // flux_COp 
+	 // flux_CNp 
+	 // flux_Cp
+	 // --- ONLY FOR Bprime COUPLING !!!
+	 // rhoUeCh
+	 );
+    
+      writeData
+	(
+	 T
+	 mdot
+	 y_em 
+	 y_N
+	 y_O
+	 y_C
+	 y_N2
+	 y_NO
+	 y_O2 
+	 y_CO 
+	 y_CO2 
+	 y_CN 
+	 y_C2 
+	 y_C3 
+	 y_N2p 
+	 y_NOp 
+	 y_Np 
+	 y_O2p 
+	 y_Op 
+	 y_COp 
+	 y_CNp 
+	 y_Cp 
+	 );
+    };
+};
+
+PATO
+{
+  //- heat transfer
+  BprimeTemperature  true;    //- disable Bprime coupling mode for heat flux computation
+  conductionTransfer true;    //- explicit coupling interface : enable conduction
+                              //- (mandatory if reading) 
+  radiationTransfer  true;    //- explicit coupling interface : enable radiation
+  sourceTransfer     true;    //- explicit coupling interface : enable energy through het. re.
+  detailled_SEB      true;
+
+  //- Ablation
+  BprimeAblation     false;   //- enable Bprime coupling mode for ablation computation
+  finiteRateAblation false;   //- enable finite rate ablation for ablation computation
+                              //- default is Park carbon 5 model
+
+  //- Mixture Composition
+  BprimeSpecies      true;   //- disable Bprime coupling mode for composition computation
+  blowingPyro        false;   //- blowingPyro flag is used to add the pyro term to mdot
+  blowingChar        true;    //- blowingChar flag is used to add the surface term to mdot
+  blowingAxy         false;   //- flag to make hegel displacement slip against the bottom axis [EXPERIMENTAL]
+  diffusionTransport false;    //- enable explicit diffusion flux calculation
+  //- (mandatory if reading) 
+  sourceTransport    false;   //- add surface source term in the chemical species flux
+                              //- default is Park carbon 5 model
+  he                 5.48936e+7;
+  rhoUeCh            1.0 ;
+  MppMixtureName     "air_ablation_jonston";
+
+  // -frozen parameters for coupling stability
+  freezingInit       true;
+  freezingStart      1.0E-8;
+  freezingEnd        1.0E-7;
+
+//  freezingStart      1.0E-7;
+//  freezingEnd        1.0E-6;
+}	 

@@ -1,0 +1,446 @@
+<?xml version="1.0"?>
+
+<precice-configuration>
+
+  <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+  <log>
+    <sink filter="%Severity% > debug and %Rank% = 0"
+  	  format="---[precice] %ColorizedSeverity% %Message%"
+  	  enabled="true"/>
+  </log>
+  
+  <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+  <solver-interface dimensions="2">
+    <!-- preambule -->
+
+    <!-- aerothermal related variables -->
+    <data:scalar name="T"/>
+    <data:scalar name="q"/>
+    <data:scalar name="p"/>
+    <data:vector name="mdot"/>
+
+    <!-- <data:scalar name="radSurf"/> -->
+
+    <!-- ablative air 11 environment species related  -->
+    <data:scalar name="y_em"/>
+    <data:scalar name="y_N"/>
+    <data:scalar name="y_O"/>
+    <data:scalar name="y_C"/>
+    <data:scalar name="y_N2"/>
+    <data:scalar name="y_NO"/>
+    <data:scalar name="y_O2"/>
+    <data:scalar name="y_CO"/>
+    <data:scalar name="y_CO2"/>
+    <data:scalar name="y_CN"/>
+    <data:scalar name="y_C2"/>
+    <data:scalar name="y_C3"/>
+    <data:scalar name="y_N2p"/>
+    <data:scalar name="y_NOp"/>
+    <data:scalar name="y_Np"/>
+    <data:scalar name="y_O2p"/>
+    <data:scalar name="y_Op"/>
+    <data:scalar name="y_COp"/>
+    <data:scalar name="y_CNp"/>
+    <data:scalar name="y_Cp"/>
+
+    <data:scalar name="flux_em"/>
+    <data:scalar name="flux_N"/>
+    <data:scalar name="flux_O"/>
+    <data:scalar name="flux_C"/>
+    <data:scalar name="flux_N2"/>
+    <data:scalar name="flux_NO"/>
+    <data:scalar name="flux_O2"/>
+    <data:scalar name="flux_CO"/>
+    <data:scalar name="flux_CO2"/>
+    <data:scalar name="flux_CN"/>
+    <data:scalar name="flux_C2"/>
+    <data:scalar name="flux_C3"/>
+    <data:scalar name="flux_N2p"/>
+    <data:scalar name="flux_NOp"/>
+    <data:scalar name="flux_Np"/>
+    <data:scalar name="flux_O2p"/>
+    <data:scalar name="flux_Op"/>
+    <data:scalar name="flux_COp"/>
+    <data:scalar name="flux_CNp"/>
+    <data:scalar name="flux_Cp"/>
+
+    <!-- PATO ablation relative species -->
+    <!-- <data:scalar name="rhoUeCh"/> -->
+
+    <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+    
+    <!-- surface mesh -->
+    <mesh name="hegel_wall_f">
+      <!-- aerothermal related variables -->
+      <use-data name="T"/>
+      <use-data name="q"/>
+      <use-data name="mdot"/>
+      <use-data name="p"/>
+
+      <!-- ablative air 11 environment species related  -->
+      <use-data name="y_em"/>
+      <use-data name="y_N"/>
+      <use-data name="y_O"/>
+      <use-data name="y_C"/>
+      <use-data name="y_N2"/>
+      <use-data name="y_NO"/>
+      <use-data name="y_O2"/>
+      <use-data name="y_CO"/>
+      <use-data name="y_CO2"/>
+      <use-data name="y_CN"/>
+      <use-data name="y_C2"/>
+      <use-data name="y_C3"/>
+      <use-data name="y_N2p"/>
+      <use-data name="y_NOp"/>
+      <use-data name="y_Np"/>
+      <use-data name="y_O2p"/>
+      <use-data name="y_Op"/>
+      <use-data name="y_COp"/>
+      <use-data name="y_CNp"/>
+      <use-data name="y_Cp"/>
+
+      <use-data name="flux_em"/>
+      <use-data name="flux_N"/>
+      <use-data name="flux_O"/>
+      <use-data name="flux_C"/>
+      <use-data name="flux_N2"/>
+      <use-data name="flux_NO"/>
+      <use-data name="flux_O2"/>
+      <use-data name="flux_CO"/>
+      <use-data name="flux_CO2"/>
+      <use-data name="flux_CN"/>
+      <use-data name="flux_C2"/>
+      <use-data name="flux_C3"/>
+      <use-data name="flux_N2p"/>
+      <use-data name="flux_NOp"/>
+      <use-data name="flux_Np"/>
+      <use-data name="flux_O2p"/>
+      <use-data name="flux_Op"/>
+      <use-data name="flux_COp"/>
+      <use-data name="flux_CNp"/>
+      <use-data name="flux_Cp"/>
+    </mesh>
+
+    <mesh name="SolidMeshFace">
+      <!-- aerothermal related variables -->
+      <use-data name="T"/>
+      <use-data name="q"/>
+      <use-data name="mdot"/>
+      <use-data name="p"/>
+
+      <!-- ablative air 11 environment species related  -->
+      <use-data name="y_em"/>
+      <use-data name="y_N"/>
+      <use-data name="y_O"/>
+      <use-data name="y_C"/>
+      <use-data name="y_N2"/>
+      <use-data name="y_NO"/>
+      <use-data name="y_O2"/>
+      <use-data name="y_CO"/>
+      <use-data name="y_CO2"/>
+      <use-data name="y_CN"/>
+      <use-data name="y_C2"/>
+      <use-data name="y_C3"/>
+      <use-data name="y_N2p"/>
+      <use-data name="y_NOp"/>
+      <use-data name="y_Np"/>
+      <use-data name="y_O2p"/>
+      <use-data name="y_Op"/>
+      <use-data name="y_COp"/>
+      <use-data name="y_CNp"/>
+      <use-data name="y_Cp"/>
+
+      <use-data name="flux_em"/>
+      <use-data name="flux_N"/>
+      <use-data name="flux_O"/>
+      <use-data name="flux_C"/>
+      <use-data name="flux_N2"/>
+      <use-data name="flux_NO"/>
+      <use-data name="flux_O2"/>
+      <use-data name="flux_CO"/>
+      <use-data name="flux_CO2"/>
+      <use-data name="flux_CN"/>
+      <use-data name="flux_C2"/>
+      <use-data name="flux_C3"/>
+      <use-data name="flux_N2p"/>
+      <use-data name="flux_NOp"/>
+      <use-data name="flux_Np"/>
+      <use-data name="flux_O2p"/>
+      <use-data name="flux_Op"/>
+      <use-data name="flux_COp"/>
+      <use-data name="flux_CNp"/>
+      <use-data name="flux_Cp"/>
+
+      <!-- PATO ablation relative species -->
+      <!-- <use-data  name="rhoUeCh"/> -->
+    </mesh>
+
+    <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+    <!-- HEGEL mesh -->
+    <participant name="HEGEL">
+      <!-- Hegel surface mesh -->
+      <use-mesh   name="hegel_wall_f"    provide="yes"/>
+      <use-mesh   name="SolidMeshFace"   from="SolidSolver"/>
+      <!-- aerothermal related variables -->
+      <read-data  name="T"         mesh="hegel_wall_f"/>
+      <write-data name="q"         mesh="hegel_wall_f"/>
+      <write-data name="p"         mesh="hegel_wall_f"/>
+      <read-data  name="mdot"      mesh="hegel_wall_f"/>
+
+      <!-- ablative air 11 environment species related  -->
+      <read-data  name="y_em"      mesh="hegel_wall_f"/>
+      <read-data  name="y_N"       mesh="hegel_wall_f"/>
+      <read-data  name="y_O"       mesh="hegel_wall_f"/>
+      <read-data  name="y_C"       mesh="hegel_wall_f"/>
+      <read-data  name="y_N2"      mesh="hegel_wall_f"/>
+      <read-data  name="y_NO"      mesh="hegel_wall_f"/>
+      <read-data  name="y_O2"      mesh="hegel_wall_f"/>
+      <read-data  name="y_CO"      mesh="hegel_wall_f"/>
+      <read-data  name="y_CO2"     mesh="hegel_wall_f"/>
+      <read-data  name="y_CN"      mesh="hegel_wall_f"/>
+      <read-data  name="y_C2"      mesh="hegel_wall_f"/>
+      <read-data  name="y_C3"      mesh="hegel_wall_f"/>
+      <read-data  name="y_N2p"     mesh="hegel_wall_f"/>
+      <read-data  name="y_NOp"     mesh="hegel_wall_f"/>
+      <read-data  name="y_Np"      mesh="hegel_wall_f"/>
+      <read-data  name="y_O2p"     mesh="hegel_wall_f"/>
+      <read-data  name="y_Op"      mesh="hegel_wall_f"/>
+      <read-data  name="y_COp"     mesh="hegel_wall_f"/>
+      <read-data  name="y_CNp"     mesh="hegel_wall_f"/>
+      <read-data  name="y_Cp"      mesh="hegel_wall_f"/>
+
+      <write-data name="flux_em"   mesh="hegel_wall_f"/>
+      <write-data name="flux_N"    mesh="hegel_wall_f"/>
+      <write-data name="flux_O"    mesh="hegel_wall_f"/>
+      <write-data name="flux_C"    mesh="hegel_wall_f"/>
+      <write-data name="flux_N2"   mesh="hegel_wall_f"/>
+      <write-data name="flux_NO"   mesh="hegel_wall_f"/>
+      <write-data name="flux_O2"   mesh="hegel_wall_f"/>
+      <write-data name="flux_CO"   mesh="hegel_wall_f"/>
+      <write-data name="flux_CO2"  mesh="hegel_wall_f"/>
+      <write-data name="flux_CN"   mesh="hegel_wall_f"/>
+      <write-data name="flux_C2"   mesh="hegel_wall_f"/>
+      <write-data name="flux_C3"   mesh="hegel_wall_f"/>
+      <write-data name="flux_N2p"  mesh="hegel_wall_f"/>
+      <write-data name="flux_NOp"  mesh="hegel_wall_f"/>
+      <write-data name="flux_Np"   mesh="hegel_wall_f"/>
+      <write-data name="flux_O2p"  mesh="hegel_wall_f"/>
+      <write-data name="flux_Op"   mesh="hegel_wall_f"/>
+      <write-data name="flux_COp"  mesh="hegel_wall_f"/>
+      <write-data name="flux_CNp"  mesh="hegel_wall_f"/>
+      <write-data name="flux_Cp"   mesh="hegel_wall_f"/>
+      <mapping:nearest-neighbor direction="read" from="SolidMeshFace"
+                                to="hegel_wall_f" constraint="consistent"/>
+
+    </participant>
+
+    <!-- Pato mesh -->
+    <participant name="SolidSolver">
+      <use-mesh  name="SolidMeshFace"       provide="yes"/>
+      <use-mesh  name="hegel_wall_f"        from="HEGEL"/>
+      <!-- aerothermal related variables -->
+      <write-data name="T"         mesh="SolidMeshFace"/>
+      <read-data  name="q"         mesh="SolidMeshFace"/>
+      <read-data  name="p"         mesh="SolidMeshFace"/>
+      <write-data name="mdot"      mesh="SolidMeshFace"/>
+
+      <write-data name="y_em"      mesh="SolidMeshFace"/>
+      <write-data name="y_N"       mesh="SolidMeshFace"/>
+      <write-data name="y_O"       mesh="SolidMeshFace"/>
+      <write-data name="y_C"       mesh="SolidMeshFace"/>
+      <write-data name="y_N2"      mesh="SolidMeshFace"/>
+      <write-data name="y_NO"      mesh="SolidMeshFace"/>
+      <write-data name="y_O2"      mesh="SolidMeshFace"/>
+      <write-data name="y_CO"      mesh="SolidMeshFace"/>
+      <write-data name="y_CO2"     mesh="SolidMeshFace"/>
+      <write-data name="y_CN"      mesh="SolidMeshFace"/>
+      <write-data name="y_C2"      mesh="SolidMeshFace"/>
+      <write-data name="y_C3"      mesh="SolidMeshFace"/>
+      <write-data name="y_N2p"     mesh="SolidMeshFace"/>
+      <write-data name="y_NOp"     mesh="SolidMeshFace"/>
+      <write-data name="y_Np"      mesh="SolidMeshFace"/>
+      <write-data name="y_O2p"     mesh="SolidMeshFace"/>
+      <write-data name="y_Op"      mesh="SolidMeshFace"/>
+      <write-data name="y_COp"     mesh="SolidMeshFace"/>
+      <write-data name="y_CNp"     mesh="SolidMeshFace"/>
+      <write-data name="y_Cp"      mesh="SolidMeshFace"/>
+
+      <read-data  name="flux_em"   mesh="SolidMeshFace"/>
+      <read-data  name="flux_N"    mesh="SolidMeshFace"/>
+      <read-data  name="flux_O"    mesh="SolidMeshFace"/>
+      <read-data  name="flux_C"    mesh="SolidMeshFace"/>
+      <read-data  name="flux_N2"   mesh="SolidMeshFace"/>
+      <read-data  name="flux_NO"   mesh="SolidMeshFace"/>
+      <read-data  name="flux_O2"   mesh="SolidMeshFace"/>
+      <read-data  name="flux_CO"   mesh="SolidMeshFace"/>
+      <read-data  name="flux_CO2"  mesh="SolidMeshFace"/>
+      <read-data  name="flux_CN"   mesh="SolidMeshFace"/>
+      <read-data  name="flux_C2"   mesh="SolidMeshFace"/>
+      <read-data  name="flux_C3"   mesh="SolidMeshFace"/>
+      <read-data  name="flux_N2p"  mesh="SolidMeshFace"/>
+      <read-data  name="flux_NOp"  mesh="SolidMeshFace"/>
+      <read-data  name="flux_Np"   mesh="SolidMeshFace"/>
+      <read-data  name="flux_O2p"  mesh="SolidMeshFace"/>
+      <read-data  name="flux_Op"   mesh="SolidMeshFace"/>
+      <read-data  name="flux_COp"  mesh="SolidMeshFace"/>
+      <read-data  name="flux_CNp"  mesh="SolidMeshFace"/>
+      <read-data  name="flux_Cp"   mesh="SolidMeshFace"/>
+      <!-- PATO ablation relative species -->
+      <!-- <read-data  name="rhoUeCh"   mesh="SolidMeshFace"/> -->
+
+      <watch-integral mesh="SolidMeshFace" name="pato-integral" scale-with-connectivity="false"/>
+      <!-- CORRECT THE STAGNATION POINT LOCATION CORRESPONDING TO THE GEOMETRY INVESTIGATED -->
+      <watch-point    mesh="SolidMeshFace" name="stagnation-point" coordinate="-0.3; 0"/>
+
+      <export:vtk every-n-time-windows="1" directory="surface-state"
+		  every-iteration="0" normals="0"/>
+
+      <mapping:nearest-neighbor direction="read" from="hegel_wall_f"
+                                to="SolidMeshFace" constraint="consistent"/>
+      
+    </participant>
+    
+    <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+    
+    <m2n:sockets from="SolidSolver" to="HEGEL" exchange-directory="../HEGEL-PATO/"     network="eth0"/>
+
+    <!-- %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% -->
+    <!-- BEST COUPLING SCHEME FOR HEGEL-PATO SURFACE COUPLING IS AITKEN IMPLICIT SERIAL -->
+    <!-- Surface coupling configuration -->
+    <coupling-scheme:parallel-explicit>
+      <participants first="SolidSolver" second="HEGEL"/>
+      <time-window-size valid-digits="10" method="fixed"  value="1.e-06"/>
+      <max-time value="1.e+01"/>
+
+      <!-- Face data -->
+      <!-- aerothermal related variables -->
+      <exchange data="T"         mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="q"         mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1" />
+      <exchange data="p"         mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1" />
+      <exchange data="mdot"      mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="0" />
+
+      <!-- ablative air 11 environment species related  -->
+      <exchange data="y_em" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_N" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_O" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_C" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_N2" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_NO" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_O2" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_CO" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_CO2" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_CN" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_C2" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_C3" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_N2p" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_NOp" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_Np" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_O2p" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_Op" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_COp" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_CNp" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="y_Cp" mesh="SolidMeshFace"
+		from="SolidSolver" to="HEGEL" initialize="1"/>
+      <exchange data="flux_em" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_N" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_O" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_C" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_N2" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_NO" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_O2" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_CO" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_CO2" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_CN" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_C2" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_C3" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_N2p" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_NOp" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_Np" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_O2p" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_Op" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_COp" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_CNp" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+      <exchange data="flux_Cp" mesh="hegel_wall_f"
+		from="HEGEL" to="SolidSolver" initialize="1"/>
+
+      <!-- Parameters for IMPLICIT coupling scheme -->
+      <!-- <max-iterations value="50"/> -->
+      <!-- <extrapolation-order value="2"/> -->
+
+      <!-- I request convergence of driving physics data, i.e. heat flux -->
+      <!-- <absolute-convergence-measure limit="1.e-02" data="q" -->
+      <!-- 				    mesh="hegel_wall_f"  strict="0" suffices="1"/> -->
+      <!-- <relative-convergence-measure limit="1.e-04" data="q" -->
+      <!-- 				    mesh="hegel_wall_f"  strict="0" suffices="1"/> -->
+      <!-- <residual-relative-convergence-measure limit="1.e-02" data="q" -->
+      <!-- 			            mesh="hegel_wall_f"  strict="0" suffices="1"/> -->
+      <!-- <absolute-convergence-measure limit="1.e-02" data="p" -->
+      <!-- 				    mesh="hegel_wall_f"  strict="0" suffices="0"/> -->
+      <!-- <absolute-convergence-measure limit="1.e-02" data="flux_CO" -->
+      <!-- 				    mesh="hegel_wall_f"  strict="0" suffices="0"/> -->
+
+      <!-- <acceleration:IQN-ILS> -->
+      <!--   <data name="q" mesh="hegel_wall_f"/> -->
+      <!--   <preconditioner type="residual-sum"/> -->
+      <!--   <filter type="QR2" limit="1e+0"/> -->
+      <!--   <initial-relaxation value="1."/> -->
+      <!--   <max-used-iterations value="5"/> -->
+      <!--   <time-windows-reused value="2"/> -->
+      <!-- </acceleration:IQN-ILS> -->
+      <!-- <acceleration:IQN-IMVJ> -->
+      <!--   <data name="q" mesh="hegel_wall_f"/> -->
+      <!--   <preconditioner type="value"/> -->
+      <!--   <filter type="QR2" limit="1.0e+0"/> -->
+      <!-- 	<imvj-restart-mode chunk-size="15" -->
+      <!-- 			   type="RS-0"/> -->
+      <!--   <initial-relaxation value="1."/> -->
+      <!--   <max-used-iterations value="5"/> -->
+      <!--   <time-windows-reused value="5"/> -->
+      <!-- </acceleration:IQN-IMVJ> -->
+
+    </coupling-scheme:parallel-explicit>
+  </solver-interface>
+
+</precice-configuration>

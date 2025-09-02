@@ -1,0 +1,18 @@
+#!/bin/sh                                                                                                                                                                                                                                                   
+cd ${0%/*} || exit 1    # Run from this directory                                                                                                                                                                                                            
+
+# remove time folders
+rm -rf [0-9]*
+
+# remove all the *.pdf files
+rm -f plots/*.pdf
+
+# remove all the *.log files
+rm -f *.log
+
+# remove all the *.json files
+rm -f *.json
+
+# remove temporary files
+find . -name '*~' -ls -delete
+

@@ -1,0 +1,104 @@
+/*--------------------------------*- C++ -*----------------------------------* \
+  | =========                 |                                             |
+  | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox      |
+  |  \\    /   O peration     | Version:  5.0                                   |
+  |   \\  /    A nd           | Web:      www.OpenFOAM.org                 |
+  |    \\/     M anipulation  |                                                 |
+  \*---------------------------------------------------------------------------*/
+FoamFile {
+  version     2.0;
+  format      ascii;
+  class       dictionary;
+  object      blockMeshDict;
+}
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+// Creating a 2D axi mesh for a the leading edges geoemetry
+
+convertToMeters 1.;
+
+vertices
+(
+ (0.400000 0.000000 0.000001)
+ (0.398478 0.034730 0.003039)
+ (0.199239 0.017365 0.001520)
+ (0.200000 0.000000 0.000001)
+
+ (0.400000 0.000000 -0.000001)
+ (0.398478 0.034730 -0.003039)
+ (0.199239 0.017365 -0.001520)
+ (0.200000 0.000000 -0.000001)
+
+ );
+blocks
+( 
+ // WEDGE FRONT
+ hex (0 3 2 1 4 7 6 5) (50 100 1) simpleGrading  (1 1 1)
+  );
+
+edges
+(
+  // ARC CONNECTION
+ arc 0 1  (0.399619 0.017381 0.001522)
+ arc 4 5  (0.399619 0.017381 -0.001522)
+ arc 2 3  (0.199810 0.008691 0.000761)
+ arc 6 7  (0.199810 0.008691 -0.000761)
+ );
+
+boundary
+( 
+ axis
+ {
+   type empty ;
+   faces
+     (
+      (0 3 7 4)
+      );
+ }
+ back
+ {
+   type wall ;
+   faces
+     (
+      (1 2 5 6)
+      );
+ }
+ wedge-right
+ {
+   type wedge;
+   faces
+     (
+      (0 1 2 3)
+      );
+ }
+ wedge-left
+ {
+   type wedge;
+   faces
+     (
+      (4 5 6 7)
+      );
+ }
+ outer
+ {
+   type wall ;
+   faces
+     (
+      (0 1 5 4)
+      );
+ }
+ inner
+ {
+   type wall ;
+   faces
+     (
+      (2 3 7 6)
+      );
+ }
+  );
+
+mergePatchPairs
+(
+);
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
