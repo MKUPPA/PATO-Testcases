@@ -21,43 +21,43 @@ FoamFile
     {
         type            empty;
         inGroups        List<word> 1(empty);
-        nFaces          50;
-        startFace       9850;
+        nFaces          100;
+        startFace       99;
     }
     back
     {
         type            wall;
         inGroups        List<word> 1(wall);
-        nFaces          50;
-        startFace       9900;
+        nFaces          100;
+        startFace       199;
     }
     wedge-right
     {
         type            wedge;
         inGroups        List<word> 1(wedge);
-        nFaces          5000;
-        startFace       9950;
+        nFaces          100;
+        startFace       299;
     }
     wedge-left
     {
         type            wedge;
         inGroups        List<word> 1(wedge);
-        nFaces          5000;
-        startFace       14950;
+        nFaces          100;
+        startFace       399;
     }
     outer
     {
         type            wall;
         inGroups        List<word> 1(wall);
-        nFaces          100;
-        startFace       19950;
+        nFaces          1;
+        startFace       499;
     }
     inner
     {
         type            wall;
         inGroups        List<word> 1(wall);
-        nFaces          100;
-        startFace       20050;
+        nFaces          1;
+        startFace       500;
     }
 )
 

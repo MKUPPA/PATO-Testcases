@@ -7,24 +7,25 @@
 \*---------------------------------------------------------------------------*/
 FoamFile
 {
-    version     2.0;
-    format      ascii;
-    class       volScalarField;
-    location    "0";
-    object      p;
+    version         2.0;
+    format          ascii;
+    class           volScalarField;
+    object          N2+;
 }
+
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [1 -1 -2 0 0 0 0];
 
-internalField   uniform 101325;
+dimensions          [ 0 0 0 0 0 0 0 ];
+
+internalField   uniform 0.0;
 
 boundaryField
 {
   outer
     {
-      type   fixedValue;    // since p from hegel
-      value  $internalField;
+      type            fixedGradient;  // since flux_N2+ from hegel
+      gradient        uniform 0.;
     }
   back
     {

@@ -7,12 +7,13 @@ rm -rf [0-9]*
 # remove all the *.pdf files
 rm -f plots/*.pdf
 
-# remove all the *.log files
-rm -f *.log
+# remove output folder and add an empty file for git repository
+if [ -d output ]; then
+    rm -rf output
+    mkdir output
+    touch output/empty
+fi
 
-# remove all the *.json files
-rm -f *.json
-
-# remove temporary files
+# remove temporary files                                                                                                                                                                                                                                    
 find . -name '*~' -ls -delete
 

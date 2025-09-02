@@ -15,31 +15,56 @@ FoamFile {
 
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-/****************************** GENERAL ************************************/
 //debug yes;
-movingMesh      no;
-/****************************** end GENERAL ********************************/
-
-/****************************** IO *****************************************/
+movingMesh no;
 IO {
-  writeFields(); // write fields in the time folders
+  IOType no;
+  writeFields (
+	       O
+	       C
+	       N
+	       N2
+	       O2
+	       NO
+	       C3
+	       C2
+	       CN
+	       CO2
+	       CO
+	       );
   probingFunctions
   (
-  ); // name of sampling/probing dictionaries in "system/porousMat"
+  );
 }
-/****************************** END IO ************************************/
-
-/****************************** ENERGY ************************************/
-Energy {
-  EnergyType PureConduction; // Solve the temperature equation
-}
-/****************************** END ENERGY ********************************/
-
-/****************************** MATERIAL PROPERTIES  ************************/
-MaterialProperties {
-  MaterialPropertiesType PureConduction;
+MaterialProperties
+{
+  MaterialPropertiesType Porous; 
   MaterialPropertiesDirectory "$FOAM_CASE/DATA";
-  virginOrChar char;
 }
-/****************************** END MATERIAL PROPERTIES  ********************/
+
+Mass
+{
+  MassType DarcyLaw; 
+}
+
+Energy
+{
+  EnergyType PureConduction;
+}
+
+GasProperties
+{
+  GasPropertiesType FiniteRate; 
+}
+
+MaterialChemistry
+{
+  MaterialChemistryType SpeciesConservation;
+  mixture air11_carbon_park; 
+}
+VolumeAblation
+{
+  VolumeAblationType FibrousMaterialTypeA; // USELESS BUT NECESSARY FOR INIT
+  energyConservation isothermal;
+}
 

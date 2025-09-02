@@ -1,0 +1,14 @@
+#----------------------------
+#Mixture file for air11_ablation
+#----------------------------
+
+#----------------------------
+#Elements (names and mole fractions)
+#----------------------------
+ELEM = em N O C
+ELEM_FRAC = 0.d0 0.79d0 0.21d0 0.d0
+
+#--------------------------
+#Components
+#--------------------------
+COMP = em N O C N2 NO O2 CN CO CO2 C3 N2p NOp Np O2p Op

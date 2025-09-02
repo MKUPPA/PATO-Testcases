@@ -14,7 +14,7 @@ FoamFile {
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
 ddtSchemes {
-default            Euler; // backward;
+default            Euler;
 }
 
 gradSchemes {
@@ -22,11 +22,13 @@ default           Gauss linear corrected;
 }
 
 divSchemes {
-default             Gauss  linear corrected;
+default         	Gauss  linear corrected;
+  div(epsphi,Yi)    Gauss   upwind;
+  div(meshPhi,Xsii) Gauss downwind;
 }
 
 laplacianSchemes {
-default             Gauss linear corrected;
+default         	Gauss linear corrected;
 }
 
 interpolationSchemes {
@@ -40,6 +42,11 @@ default         corrected;
 fluxRequired { // used for the ALE correction
 default         no;
   Ta;
+  p;
+  Xsii;
+  Yi;
+  eps_s;
+  rT;
 }
 
 // ************************************************************************* //

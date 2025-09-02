@@ -24,7 +24,7 @@ stopAt          endTime;
 
 endTime         1;
 
-deltaT          1e-6;
+deltaT          1e-3;
 
 writeControl    adjustableRunTime;
 
@@ -58,12 +58,12 @@ REVlength   1e3;
 
 functions
 {
-    preCICE_Adapter
-      {
-	region porousMat;
-	type preciceAdapterFunctionObject;
-	libs ("libpreciceAdapterFunctionObject.so");
-      }
+    // preCICE_Adapter
+    //   {
+    // 	region porousMat;
+    // 	type preciceAdapterFunctionObject;
+    // 	libs ("libpreciceAdapterFunctionObject.so");
+    //   }
 }
 
 // ************************************************************************* //

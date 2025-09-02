@@ -1,4 +1,4 @@
-/*--------------------------------*- C++ -*----------------------------------*\
+/*--------------------------------*- C++ -*----------------------------------* \
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
 |  \\    /   O peration     | Version:  5.0                                   |
@@ -11,20 +11,20 @@ FoamFile
     format      ascii;
     class       volScalarField;
     location    "0";
-    object      p;
+    object      T;
 }
 // * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
 
-dimensions      [1 -1 -2 0 0 0 0];
+dimensions      [0 0 0 1 0 0 0];
 
-internalField   uniform 101325;
+internalField   uniform 298;
 
 boundaryField
 {
   outer
     {
-      type   fixedValue;    // since p from hegel
-      value  $internalField;
+      type   fixedGradient; // since q from hegel
+      gradient  uniform 0;
     }
   back
     {
@@ -48,6 +48,5 @@ boundaryField
       type   wedge;
     }
 }
-
 
 // ************************************************************************* //

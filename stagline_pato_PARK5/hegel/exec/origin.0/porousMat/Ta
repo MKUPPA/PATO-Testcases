@@ -1,4 +1,4 @@
-/*--------------------------------*- C++ -*----------------------------------*\
+/*--------------------------------*- C++ -*----------------------------------* \
 | =========                 |                                                 |
 | \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
 |  \\    /   O peration     | Version:  5.0                                   |
@@ -21,21 +21,32 @@ internalField   uniform 298;
 
 boundaryField
 {
-    outer
+  outer
     {
-      type    fixedValue;
-      value   uniform 500;
+      type   fixedGradient; // since q from hegel
+      gradient  uniform 100000;
     }
-    sides
+  back
     {
-        type            zeroGradient;
+      type   zeroGradient;
     }
-    inner
+  inner
     {
-      type    fixedValue;
-      value   uniform 298;
+      type   fixedValue;
+      value  $internalField;
+    }
+  axis
+    {
+      type   empty;
+    }
+  wedge-left
+    {
+      type   wedge;
+    }
+  wedge-right
+    {
+      type   wedge;
     }
 }
-
 
 // ************************************************************************* //

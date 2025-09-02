@@ -21,20 +21,31 @@ internalField   uniform 300;
 
 boundaryField
 {
-    outer
+  outer
     {
-        type            calculated;
-	    value uniform 300;
+      type  calculated;
+      value uniform 300;
     }
-    sides
+  back
     {
-        type            calculated;
-        value uniform 300;
+      type   zeroGradient;
     }
-    inner
+  inner
     {
-        type            calculated;
-        value uniform 300;
+      type  calculated;
+      value uniform 300;
+    }
+  axis
+    {
+      type   empty;
+    }
+  wedge-left
+    {
+      type   wedge;
+    }
+  wedge-right
+    {
+      type   wedge;
     }
 }
 

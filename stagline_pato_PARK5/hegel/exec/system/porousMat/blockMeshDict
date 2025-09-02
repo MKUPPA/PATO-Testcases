@@ -33,7 +33,7 @@ vertices
 blocks
 ( 
  // WEDGE FRONT
- hex (0 3 2 1 4 7 6 5) (50 100 1) simpleGrading  (1 1 1)
+ hex (0 3 2 1 4 7 6 5) (100 1 1) simpleGrading  (100 1 1)
   );
 
 edges
