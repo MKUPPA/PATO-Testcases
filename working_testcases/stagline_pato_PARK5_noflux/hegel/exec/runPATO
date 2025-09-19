@@ -1,0 +1,10 @@
+#!/bin/sh
+
+# copy initial fields
+cp -r origin.0 0 
+
+# create polyMesh
+blockMesh -region porousMat
+
+# run PATOx
+PATOx

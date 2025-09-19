@@ -1,0 +1,104 @@
+#-------------------------------------
+#Species file for CO
+#-------------------------------------
+
+#-------------------------------------
+# References ([1-10] from https://cccbdb.nist.gov/exp2x.asp webpage):
+#
+# 1) Stern, R. C.; Gammon, R. H.; Lesk, M. E.; Freund, R. S.; Klemperer, W. A., "Fine Structure and Dipole Moment of Metastable a 3Pi Carbon Monoxide" J. Chem. Phys. 52(7), 3467-3482, 1970
+#
+# 2) Huber, K.P.; Herzberg, G., Molecular Spectra and Molecular Structure. IV. Constants of Diatomic Molecules, Van Nostrand Reinhold Co., 1979
+#
+# 3) Olney, T. N. Cann, N. M.; Cooper, G.; Brion, C. E., Absolute scale determination for photoabsorption spectra and the calculation of molecular properties using dipole sum-rules, Chem. Phys. 223 (1997) 59-98
+#
+# 4) Graham, C.; Imrie, D. A.; Raab, R. E.; "Measurement of the electric quadrupole moments of CO2, CO, N2, Cl2 and BF3" Mol. Phys. 93(1), 1998, 49-56
+#
+# 5) Irikura, K. K.; "Experimental Vibrational Zero-Point Energies: Diatomic Molecules" J. Phys. Chem. Ref. Data 36(2), 389, 2007
+#
+# 6) Cox, J.D.; Wagman, D.D.; Medvedev, V.A.CODATA Key Values for Thermodynamics. Hemisphere, New York, 1989
+#
+# 7) Gurvich, L.V.; Veyts, I. V.; Alcock, C. B., Thermodynamic Properties of Individual Substances, Fouth Edition, Hemisphere Pub. Co., New York, 1989
+#
+# 8) NIST Diatomic Spectral Database (www.physics.nist.gov/PhysRefData/MolSpec/Diatomic/index.html)
+#
+# 9) R. D. Nelson Jr., D. R. Lide, A. A. Maryott "Selected Values of electric dipole moments for molecules in the gas phase" NSRDS-NBS10, 1967
+#
+# 10) NIST Chemistry Webbook (http://webbook.nist.gov/chemistry)
+#
+# 11) Capitelli, M.; Laricchiuta, A.; Bruno. D., Fundamental Aspects of Plasma Physics. Transport, Springer, 2013  
+# 
+# 12) Park, C.; Jaffe, R. L., Partridge, H., Chemical-kinetic Parameters for Hyperboic Earth Entry, J. Thermophys. Heat Transfer, 15(1), 76--90, 2001
+#
+#-------------------------------------
+
+NAME = CO
+
+#-------------------------------------
+#Molecular mass [kg/mol]
+MOLAR_MASS = 28.0104d-3
+
+#-------------------------------------
+#Number of atoms 
+NB_ATOMS = 2
+
+#-------------------------------------
+#Chemical elements (symbols and quantities)
+ELEM_NAME  = C O
+ELEM_QUANT = 1 1
+ 
+#--------------------------------------
+#Formation energy at 0 K (from Ref. [6] above)  [J/mol]
+EF = -113.81d3
+
+#--------------------------------------
+#Electric charge
+CHARGE = 0
+
+#--------------------------------------
+# Ionization potential (from Ref. [10] above) [eV]
+IP = 14.014d0
+
+#--------------------------------------
+#Linearity
+LIN = 1
+
+#--------------------------------------
+#Symmetry factor
+SYM = 1.d0
+
+#--------------------------------------
+#Lennard-Jones parameters (from Ref. [12] above)
+# - diameter [A]
+# - potential well-depth [K]
+LJ_DIAM = 3.690d0
+LJ_EPS  = 91.7d0
+
+#--------------------------------------
+#Polarizability (from Table 11.1 of Ref. [11] above) [A^3]
+POLAR = 1.95d0
+
+#--------------------------------------
+#Thermal model for internal energy (e.g. RR, HO, EL, RR_HO,...,)
+#RR = Rigid-rotor
+#HO = Harmomic-oscillator
+#EL = Electronic energy computed based on a Boltzmann distribution of electronic levels 
+#NONE = pure State-to-State approach for internal energy levels
+MODEL = RR_HO_EL
+
+#--------------------------------------
+#Characteristic rotational temperature (from Ref. [8] above) [K]
+THETA_ROT = 2.7660917103076978d0
+
+#--------------------------------------
+#Characteristic vibrational temperature (from Ref. [5] above) [K]
+THETA_VIB = 3121.7947626254927d0
+
+#--------------------------------------
+#Electronic levels degeneracies and energies [eV]
+NB_ELEC_LEVELS = 6
+0.100000E+01  0.000000E+00
+0.600000E+01  0.603637E+01
+0.300000E+01  0.692273E+01
+0.600000E+01  0.757785E+01
+0.600000E+01  0.796344E+01
+0.200000E+01  0.806833E+01

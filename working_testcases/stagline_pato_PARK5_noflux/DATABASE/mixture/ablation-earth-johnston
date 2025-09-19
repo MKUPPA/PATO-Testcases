@@ -1,0 +1,19 @@
+#----------------------------
+#Mixture file for air5
+#----------------------------
+
+#----------------------------
+#Elements (names and mole fractions)
+#----------------------------
+ELEM = em N O C
+ELEM_FRAC = 0.d0 0.79 0.21 0.d0
+
+#--------------------------
+#Components
+#--------------------------
+# COMP = em N O C N2 NO O2 CO CO2 CN C2 C3 C5 N2p NOp Np O2p Op COp CNp Cp
+# COMP = em N O C N2 NO O2 CO CO2 CN C2 C3 N2p NOp Np O2p Op COp CNp Cp
+COMP = em N O C N2 NO O2 CO CO2 CN C2 C3 N2p NOp Np O2p Op COp CNp Cp
+
+NASA_POLY_THERMO = F
+TRANSFER_OMEGA_CEL = F

@@ -1,0 +1,14 @@
+<mixture mechanism="none" thermo_db="NASA-9">
+    
+    <species>
+        E- N O C NO N2 O2 CO2 CO CN C2 C3 N2+ NO+ N+ O2+ O+ CO+ CN+ C+ C(gr)
+    </species>
+
+    <!-- Dummy composition for Bprime testing -->
+    <element_compositions default="air">
+      <composition name="air"> N:0.79, O: 0.21 C: 0.0 </composition>
+      <composition name="edge"> N:0.79, O: 0.21 C: 0.0 </composition>
+      <composition name="pyro"> N:0.20, O: 0.20 C: 0.60 </composition>
+    </element_compositions>
+    
+</mixture>

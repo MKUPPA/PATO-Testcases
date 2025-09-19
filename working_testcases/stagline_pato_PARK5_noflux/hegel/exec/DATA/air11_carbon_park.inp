@@ -1,0 +1,8 @@
+ELEMENTS
+ C   N   O 
+END
+SPECIES
+ E- N O C NO N2 O2 CO2 CO CN C2 C3 N2+ NO+ N+ O2+ O+ CO+ CN+ C+ C(gr)
+END
+
+
