@@ -1,0 +1,93 @@
+#-------------------------------------
+#Species file for CN
+#-------------------------------------
+
+#-------------------------------------
+# References ([1-5] from https://cccbdb.nist.gov/exp2x.asp webpage):
+#
+# 1) Thomson, R.; Dalby, F. W.; "Experimental determination of the dipole moments of the X (2Sigma+) and B(2 Sigma+) state of the CN molecule" Canadian Journal of Physics 46, 2815 (1968)
+#
+# 2) Huber, K. P.; Herzberg, G., Molecular Spectra and Molecular Structure. IV. Constants of Diatomic Molecules, Van Nostrand Reinhold Co., 1979
+#
+# 3) Irikura, K. K., "Experimental Vibrational Zero-Point Energies: Diatomic Molecules" J. Phys. Chem. Ref. Data 36(2), 389, 2007
+#
+# 4) Gurvich, L. V.; Veyts, I. V.; Alcock, C. B., Thermodynamic Properties of Individual Substances, Fouth Edition, Hemisphere Pub. Co., New York, 1989
+#
+# 5) NIST Chemistry Webbook (http://webbook.nist.gov/chemistry)
+#
+# 6) Capitelli, M.; Laricchiuta, A.; Bruno. D., Fundamental Aspects of Plasma Physics. Transport, Springer, 2013  
+# 
+# 7) Park, C; Jaffe, R. L., Partridge, H., Chemical-kinetic Parameters for Hyperboic Earth Entry, J. Thermophys. Heat Transfer, 15(1), 76--90, 2001
+#
+#-------------------------------------
+
+NAME = CN
+
+#-------------------------------------
+#Molecular mass [kg/mol]
+MOLAR_MASS = 26.0177d-3
+
+#-------------------------------------
+#Number of atoms 
+NB_ATOMS = 2
+
+#-------------------------------------
+#Chemical elements (symbols and quantities)
+ELEM_NAME  = C N
+ELEM_QUANT = 1 1
+ 
+#--------------------------------------
+#Formation energy at 0 K (from Ref. [4] above) [J/mol]
+EF = 437000.d0
+
+#--------------------------------------
+#Electric charge
+CHARGE = 0
+
+#--------------------------------------
+# Ionization potential (from Ref. [5] above) [eV]
+IP = 13.598d0
+
+#--------------------------------------
+#Linearity
+LIN = 1
+
+#--------------------------------------
+#Symmetry factor
+SYM = 1.d0
+
+#--------------------------------------
+#Lennard-Jones parameters (from Ref. [7] above) 
+# - diameter [A]
+# - potential well-depth [K]
+LJ_DIAM = 3.856d0 
+LJ_EPS  = 75.d0
+
+#--------------------------------------
+#Polarizability (from Table 11.1 of Ref. [6] above) [A^3] 
+POLAR = 2.1d0
+
+#--------------------------------------
+#Thermal model for internal energy (e.g. RR, HO, EL, RR_HO,...,)
+#RR = Rigid-rotor
+#HO = Harmomic-oscillator
+#EL = Electronic energy computed based on a Boltzmann distribution of electronic levels 
+#NONE = pure State-to-State approach for internal energy levels
+MODEL = RR_HO_EL
+
+#--------------------------------------
+#Characteristic rotational temperature (from Ref. [3] above) [K]
+THETA_ROT = 2.7333019852693821d0
+
+#--------------------------------------
+#Characteristic vibrational temperatures (from Ref. [3] above) [K]
+THETA_VIB = 2976.3229100948220d0 
+
+#--------------------------------------
+#Electronic levels degeneracies and energies [eV]
+NB_ELEC_LEVELS = 5
+0.200000E+01  0.000000E+00
+0.400000E+01  0.114560E+01
+0.200000E+01  0.319282E+01
+0.400000E+01  0.401706E+01
+0.400000E+01  0.675535E+01

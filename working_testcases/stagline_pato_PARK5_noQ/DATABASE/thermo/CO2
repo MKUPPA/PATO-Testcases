@@ -1,0 +1,105 @@
+#-------------------------------------
+#Species file for CO2
+#-------------------------------------
+
+#-------------------------------------
+# References ([1-10] from https://cccbdb.nist.gov/exp2x.asp webpage):
+#
+#
+# 1) Herzberg, G., "Molecular Spectra and Molecular Structure II. Infrared and Raman Spectra of polyatomic molecules" 1945 Van Nostrand.
+#
+# 2) Herzberg, G., Electronic spectra and electronic structure of polyatomic molecules,Van Nostrand,New York, 1966
+#
+# 3) Davies, P. R.; Orville-Thomas, W. J., "Infrared Band Intensities and Bond polaritites Part1. Bond Moment constants in CO2, OCS, CS2, CSe2, and SCSe" J. Mol. Struct. 4 (1969) 163
+#
+# 4) "Vibrational Intensities in Infrared and Raman Spectroscopy" WB Person, G Zerbi, ed. Elsevier, Amsterdam, 1982
+#
+# 5) Olney, T. N.; Cann, N. M.; Cooper, G.; Brion, C. E.; Absolute scale determination for photoabsorption spectra and the calculation of molecular properties using dipole sum-rules, Chem. Phys. 223 (1997) 59-98
+#
+# 6) Graham, C.; Imrie, D. A.; Raab, R. E.; "Measurement of the electric quadrupole moments of CO2, CO, N2, Cl2 and BF3" Mol. Phys. 93(1), 1998, 49-56
+#
+# 7) Cox, J.D.; Wagman, D.D.; Medvedev, V.A.CODATA Key Values for Thermodynamics. Hemisphere, New York, 1989
+#
+# 8) Gurvich, L.V.; Veyts, I. V.; Alcock, C. B., Thermodynamic Properties of Individual Substances, Fouth Edition, Hemisphere Pub. Co., New York, 1989
+#
+# 9) R. D. Nelson Jr., D. R. Lide, A. A. Maryott "Selected Values of electric dipole moments for molecules in the gas phase" NSRDS-NBS10, 1967
+#
+# 10) NIST Chemistry Webbook (http://webbook.nist.gov/chemistry)
+#
+# 11) Capitelli, M.; Laricchiuta, A.; Bruno. D., Fundamental Aspects of Plasma Physics. Transport, Springer, 2013  
+# 
+# 12) R. J. Kee, F. M. Rupley, J. A. Miller, M. E. Coltrin, J. F. Grcar, E. Meeks, H. K. Moffat, A. E. Lutz, G. Dixon-Lewis, M. D. Smooke, J. Warnatz, G. H. Evans, R. S. Larson, R. E. Mitchell, L. R. Petzold, W. C. Reynolds,
+#     M. Caracotsios, W. E. Stewart, P. Glarborg, C. Wang, and Ola Adigun, CHEMKIN Collection, Release 3.6, Reaction Design, Inc., San Diego, CA (2000).
+#
+#-------------------------------------
+
+NAME = CO2
+
+#-------------------------------------
+#Molecular mass [kg/mol]
+MOLAR_MASS = 44.0098d-3
+
+#-------------------------------------
+#Number of atoms 
+NB_ATOMS = 3
+
+#-------------------------------------
+#Chemical elements (symbols and quantities)
+ELEM_NAME  = C O
+ELEM_QUANT = 1 2
+ 
+#--------------------------------------
+#Formation energy at 0 K (from Ref. [7] above) [J/mol]
+EF = -393.14d3
+
+#--------------------------------------
+#Electric charge
+CHARGE = 0
+
+#--------------------------------------
+# Ionization potential (from Ref. [10] above) [eV]
+IP = 13.777d0
+
+#--------------------------------------
+#Linearity
+LIN = 1
+
+#--------------------------------------
+#Symmetry factor
+SYM = 2.d0
+
+#--------------------------------------
+#Lennard-Jones parameters (from Ref. [12] above)
+# - diameter [A]
+# - potential well-depth [K]
+LJ_DIAM = 3.763d0
+LJ_EPS  = 244.d0
+
+#--------------------------------------
+#Polarizability (from Table 11.1 of Ref. [11] above)  [A^3]
+POLAR = 2.91d0
+
+#--------------------------------------
+#Thermal model for internal energy (e.g. RR, HO, EL, RR_HO,...,)
+#RR = Rigid-rotor
+#HO = Harmomic-oscillator
+#EL = Electronic energy computed based on a Boltzmann distribution of electronic levels 
+#NONE = pure State-to-State approach for internal energy levels
+MODEL = RR_HO_EL
+
+#--------------------------------------
+#Characteristic rotational temperature (from Ref. [2] above) [K]
+THETA_ROT = 0.56142512537082212d0 
+
+#--------------------------------------
+#Characteristic vibrational temperature(s) (from Ref. [1] above) [K]
+THETA_VIB = 1917.8895777127852d0 3379.6868852568136d0 959.66417729514455d0 959.66417729514455d0
+
+#--------------------------------------
+#Electronic levels degeneracies and energies [eV]
+NB_ELEC_LEVELS = 5 
+0.100000E+01  0.000000E+00
+0.300000E+01  0.371950E+01
+0.600000E+01  0.409144E+01
+0.300000E+01  0.446339E+01
+0.200000E+01  0.557924E+01 

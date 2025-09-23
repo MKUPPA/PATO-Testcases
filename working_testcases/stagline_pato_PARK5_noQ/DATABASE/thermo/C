@@ -1,0 +1,83 @@
+#-------------------------------------
+#Species file for C
+#-------------------------------------
+
+#-------------------------------------
+# References ([1-4] from https://cccbdb.nist.gov/exp2x.asp webpage):
+#
+# 1) Miller, T. M.; Bederson, B., "" Adv. At. Mol. Phys. 13, 1, 1977
+# 
+# 2) Cox, J.D.; Wagman, D.D.; Medvedev, V.A.CODATA Key Values for Thermodynamics. Hemisphere, New York, 1989
+#
+# 3) Gurvich, L.V.; Veyts, I. V.; Alcock, C. B., Thermodynamic Properties of Individual Substances, Fouth Edition, Hemisphere Pub. Co., New York, 1989
+#
+# 4) NIST Chemistry Webbook (http://webbook.nist.gov/chemistry)
+#
+# 5) Capitelli, M.; Laricchiuta, A.; Bruno. D., Fundamental Aspects of Plasma Physics. Transport, Springer, 2013  
+# 
+# 6) Park, C.; Jaffe, R. L., Partridge, H., Chemical-kinetic Parameters for Hyperboic Earth Entry, J. Thermophys. Heat Transfer, 15(1), 76--90, 2001
+#
+#-------------------------------------
+
+NAME = C
+
+#-------------------------------------
+#Molecular mass [kg/mol]
+MOLAR_MASS = 12.011d-3
+
+#-------------------------------------
+#Number of atoms 
+NB_ATOMS = 1
+
+#-------------------------------------
+#Chemical elements (symbols and quantities)
+ELEM_NAME  = C
+ELEM_QUANT = 1
+
+#--------------------------------------
+#Formation energy at 0 K (from Ref. [2] above) [J/mol]
+EF = 711.19d3
+
+#--------------------------------------
+#Electric charge
+CHARGE = 0
+
+#--------------------------------------
+#Ionization potential (from Ref. [4] above) [eV]
+IP = 11.260
+
+#--------------------------------------
+#Lennard-Jones parameters (from Ref. [6] above)
+# - diameter [A]
+# - potential well-depth [K]
+LJ_DIAM = 3.385d0 
+LJ_EPS  = 30.5d0
+
+#--------------------------------------
+#Polarizability (from Table 11.1 of Ref. [5] above) [A^3]
+POLAR = 1.76d0
+
+#--------------------------------------
+#Thermal model for internal energy (e.g. RR, HO, EL, RR_HO,...)
+#RR = Rigid-rotor
+#HO = Harmomic oscillator
+#EL = Electronic energy computed based on a Boltzmann distribution of electronic levels 
+#NONE = pure State-to-State approach for internal energy levels
+MODEL = EL
+
+#--------------------------------------
+#Electronic levels degeneracies and energies [eV]
+NB_ELEC_LEVELS = 12
+0.100000E+01  0.000000E+00
+0.300000E+01  0.203332E-02
+0.500000E+01  0.538087E-02
+0.500000E+01  0.126371E+01
+0.100000E+01  0.268399E+01
+0.500000E+01  0.418260E+01
+0.700000E+01  0.794570E+01
+0.500000E+01  0.794621E+01
+0.300000E+01  0.794607E+01
+0.300000E+01  0.933023E+01
+0.500000E+01  0.933039E+01
+0.100000E+01  0.933049E+01 
+

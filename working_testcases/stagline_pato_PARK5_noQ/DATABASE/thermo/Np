@@ -1,0 +1,64 @@
+#-------------------------------------
+#Species file for Np
+#-------------------------------------
+
+#-------------------------------------
+# References:
+#
+# 1) Bultel, A.; Chéron, B. G.; Bourdon, A.; Motapon, O.; Schneider, I. F., "Collisional-radiative model in air for earth re-entry problems",  Phys. Plasmas, 13, 043502, 2006
+#
+# 2) Capitelli, M.; Laricchiuta, A.; Bruno. D., Fundamental Aspects of Plasma Physics. Transport, Springer, 2013  
+#
+#-------------------------------------
+
+NAME = Np
+
+#-------------------------------------
+#Molecular mass [kg/mol]
+MOLAR_MASS = 14.00615d-3
+
+#-------------------------------------
+#Number of atoms 
+NB_ATOMS = 1
+
+#-------------------------------------
+#Chemical elements (symbols and quantities)
+ELEM_NAME  = em N
+ELEM_QUANT = -1 1
+
+#--------------------------------------
+#Formation energy [J/mol^-1]
+EF = 1873145.d0
+
+#--------------------------------------
+#Electric charge
+CHARGE = 1
+
+#--------------------------------------
+#Ionization potential [eV]
+IP = 29.60125d0
+
+#--------------------------------------
+#Polarizability (from Table 11.1 of Ref. [2] above) [A^3] 
+POLAR = 0.55d0 
+
+#--------------------------------------
+#Thermal model for internal energy (e.g. RR, HO, EL, RR_HO,...,)
+#RR = Rigid-rotor
+#HO = Harmomic oscillator
+#EL = Electronic energy computed based on a Boltzmann distribution electronic levels 
+#NONE = pure State-to-State approach for internal energy levels
+MODEL = EL
+
+#--------------------------------------
+#Electronic levels degeneracies and energies [eV]
+NB_ELEC_LEVELS = 9
+0.100000e+01  0.000000e+00
+0.300000e+01  0.603798e-02
+0.500000e+01  0.162170e-01
+0.500000e+01  0.189895e+01
+0.100000e+01  0.405286e+01
+0.500000e+01  0.580050e+01
+0.700000e+01  0.114359e+02
+0.500000e+01  0.114375e+02
+0.300000e+01  0.114377e+02
