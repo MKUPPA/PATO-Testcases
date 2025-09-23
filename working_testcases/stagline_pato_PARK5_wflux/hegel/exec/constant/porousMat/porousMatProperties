@@ -1,0 +1,78 @@
+/*--------------------------------*- C++ -*----------------------------------*\
+| =========                 |                                                 |
+| \\      /  F ield         | OpenFOAM: The Open Source CFD Toolbox           |
+|  \\    /   O peration     | Version:  5.0                                   |
+|   \\  /    A nd           | Web:      www.OpenFOAM.org                      |
+|    \\/     M anipulation  |                                                 |
+\*---------------------------------------------------------------------------*/
+FoamFile {
+  version     4.0;
+  format      ascii;
+  class       dictionary;
+  location    "constant/porousMat";
+  object      porousMatProperties;
+}
+
+// * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * //
+
+//debug yes;
+movingMesh no;
+IO {
+  IOType no;
+  writeFields (
+	       O
+	       C
+	       N
+	       N2
+	       O2
+	       NO
+	       C3
+	       C2
+	       CN
+	       CO2
+	       CO 
+	       C+
+	       CN+
+	       CO+
+	       N+
+	       O+
+	       N2+
+	       O2+
+	       NO+
+	       );
+  probingFunctions
+  (
+  );
+}
+MaterialProperties
+{
+  MaterialPropertiesType Porous; 
+  MaterialPropertiesDirectory "$FOAM_CASE/DATA";
+}
+
+Mass
+{
+  MassType DarcyLaw; 
+}
+
+Energy
+{
+  EnergyType PureConduction;
+}
+
+GasProperties
+{
+  GasPropertiesType FiniteRate; 
+}
+
+MaterialChemistry
+{
+  MaterialChemistryType SpeciesConservation;
+  mixture air11_carbon_park; 
+}
+VolumeAblation
+{
+  VolumeAblationType FibrousMaterialTypeA; // USELESS BUT NECESSARY FOR INIT
+  energyConservation isothermal;
+}
+

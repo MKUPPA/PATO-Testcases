@@ -1,0 +1,60 @@
+#-------------------------------------
+#Species file for Op
+#-------------------------------------
+
+#-------------------------------------
+# References:
+#
+# 1) Bultel, A.; Chéron, B. G.; Bourdon, A.; Motapon, O.; Schneider, I. F., "Collisional-radiative model in air for earth re-entry problems",  Phys. Plasmas, 13, 043502, 2006
+#
+# 2) Capitelli, M.; Laricchiuta, A.; Bruno. D., Fundamental Aspects of Plasma Physics. Transport, Springer, 2013  
+#
+#-------------------------------------
+
+NAME = Op
+
+#-------------------------------------
+#Molecular mass [kg/mol]
+MOLAR_MASS = 15.99885d-3
+
+#-------------------------------------
+#Number of atoms 
+NB_ATOMS = 1
+
+#-------------------------------------
+#Chemical elements (symbols and quantities)
+ELEM_NAME  = em O
+ELEM_QUANT = -1 1
+
+#--------------------------------------
+#Formation energy [J/mol]
+EF = 1560738.d0
+
+#--------------------------------------
+#Electric charge
+CHARGE = 1
+
+#--------------------------------------
+#Ionization potential [eV]
+IP = 35.12111d0
+
+#--------------------------------------
+#Polarizability (from Table 11.1 of Ref. [2] above) [A^3] 
+POLAR = 0.279d0 
+
+#--------------------------------------
+#Thermal model for internal energy (e.g. RR, HO, EL, RR_HO,...)
+#RR = Rigid-rotor
+#HO = Harmomic oscillator
+#EL = Electronic energy computed based on a Boltzmann distribution of electronic levels 
+#NONE = pure State-to-State approach for internal energy levels
+MODEL = EL
+
+#--------------------------------------
+#Electronic levels degeneracies and energies [eV]
+NB_ELEC_LEVELS = 5
+0.400000E+01  0.000000E+00
+0.600000E+01  0.332379E+01
+0.400000E+01  0.332639E+01
+0.400000E+01  0.501722E+01
+0.200000E+01  0.501740E+01

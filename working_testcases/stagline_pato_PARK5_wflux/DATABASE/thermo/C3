@@ -1,0 +1,92 @@
+#-------------------------------------
+#Species file for C3
+#-------------------------------------
+
+#-------------------------------------
+# References ([1-2] from https://cccbdb.nist.gov/exp2x.asp webpage):
+#
+# 1) Van Orden, A.; Saykally, R. J., "Small Carbon Clusters, Spectroscopy, Structure and Energetics" Chem. Rev. 1998, 98, 2313-2357
+#
+# 2) NIST Chemistry Webbook (http://webbook.nist.gov/chemistry)
+#
+# 3) Capitelli, M.; Laricchiuta, A.; Bruno. D., Fundamental Aspects of Plasma Physics. Transport, Springer, 2013  
+# 
+# 4) Park, C; Jaffe, R. L., Partridge, Chemical-kinetic Parameters for Hyperboic Earth Entry, J. Thermophys. Heat Transfer, 15(1), 76--90, 2001
+#
+#-------------------------------------
+
+NAME = C3
+
+#-------------------------------------
+#Molecular mass [kg/mol]
+MOLAR_MASS = 36.033d-3
+
+#-------------------------------------
+#Number of atoms 
+NB_ATOMS = 3
+
+#-------------------------------------
+#Chemical elements (symbols and quantities)
+ELEM_NAME  = C 
+ELEM_QUANT = 3
+ 
+#--------------------------------------
+#Formation energy at 0 K [J/mol]
+EF = 814520.d0
+
+#--------------------------------------
+#Electric charge
+CHARGE = 0
+
+#--------------------------------------
+# Ionization potential (from Ref. [2] above) [eV]
+IP = 13.d0
+
+#--------------------------------------
+#Linearity
+LIN = 1
+
+#--------------------------------------
+#Symmetry factor
+SYM = 2.d0
+
+#--------------------------------------
+#Lennard-Jones parameters (from Ref. [4] above). 
+# - diameter [A]
+# - potential well-depth [K]
+LJ_DIAM = 3.245d0 
+LJ_EPS  = 535.3d0
+
+#--------------------------------------
+#Polarizability (from Ref. [3] above) [A^3]
+POLAR = 3.6d0
+
+#--------------------------------------
+#Thermal model for internal energy (e.g. RR, HO, EL, RR_HO,...,)
+#RR = Rigid-rotor
+#HO = Harmomic-oscillator
+#EL = Electronic energy computed based on a Boltzmann distribution of electronic levels 
+#NONE = pure State-to-State approach for internal energy levels
+MODEL = RR_HO_EL
+
+#--------------------------------------
+#Characteristic rotational temperature (from Ref. [2] above) [K]
+THETA_ROT = 0.61949416014688219d0
+
+#--------------------------------------
+#Characteristic vibrational temperature(s) (from Ref. [2] above) [K]
+THETA_VIB = 1762.5016749423569d0 2935.1048301080882d0 90.642943282749783d0 90.642943282749783d0 
+
+#--------------------------------------
+#Electronic levels degeneracies and energies [eV]
+NB_ELEC_LEVELS = 10
+0.100000E+01  0.000000E+00
+0.600000E+01  0.173576E+01
+0.600000E+01  0.266564E+01
+0.300000E+01  0.295080E+01
+0.200000E+01  0.305935E+01
+0.600000E+01  0.360791E+01
+0.300000E+01  0.406665E+01
+0.100000E+01  0.407905E+01
+0.200000E+01  0.417823E+01
+0.200000E+01  0.502132E+01 

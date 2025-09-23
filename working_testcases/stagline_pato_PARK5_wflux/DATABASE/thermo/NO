@@ -1,0 +1,103 @@
+#-------------------------------------
+#Species file for NO
+#-------------------------------------
+
+#-------------------------------------
+# References ([1-8] from https://cccbdb.nist.gov/exp2x.asp webpage):
+#
+# 1) Byfleet, C. R.; Carrington, A.; Russell, D. K., "Electric dipole moments of open-shell diatomic molceules" Molecular Physics 1971, 20(2), 271-277
+#
+# 2) Huber, K. P.; Herzberg, G., Molecular Spectra and Molecular Structure. IV. Constants of Diatomic Molecules, Van Nostrand Reinhold Co., 1979
+#
+# 3) Olney, T. N.; Cann, N. M.; G Cooper, G.; Brion, C. E., Absolute scale determination for photoabsorption spectra and the calculation of molecular properties using dipole sum-rules, Chem. Phys. 223 (1997) 59-98
+#
+# 4) Ruscic, B.; Pinzon, R. E.; Morton, M. L.; Srinivasan, N. K.; Su, M.-C.; Sutherland, J. W., JV Michael "Active Thermochemical Tables: Accurate Enthalpy of Formation of Hydroperoxyl Radical, HO2" J. Phys. Chem. A 2006, 110, 6592-6601
+#
+# 5) Irikura, K. K., "Experimental Vibrational Zero-Point Energies: Diatomic Molecules" J. Phys. Chem. Ref. Data 36(2), 389, 2007
+#
+# 6) Chase, M.W., Jr.; Davies, C.A.; Downey, J.R., Jr.; Frurip, D.J.; McDonald, R.A.; Syverud, A.N., JANAF Thermochemical Tables (Third Edition), J. Phys. Chem. Ref. Data,Suppl. 1, 1985, 14, 1.
+#
+# 7) NIST Diatomic Spectral Database (www.physics.nist.gov/PhysRefData/MolSpec/Diatomic/index.html) 
+#
+# 8) NIST Chemistry Webbook (http://webbook.nist.gov/chemistry)
+#
+# 9) Park, C.; Jaffe, R. L., Partridge, H., Chemical-kinetic Parameters for Hyperboic Earth Entry, J. Thermophys. Heat Transfer, 15(1), 76--90, 2001
+#
+# 10) Bultel, A.; Chéron, B. G.; Bourdon, A.; Motapon, O.; Schneider, I. F., "Collisional-radiative model in air for earth re-entry problems",  Phys. Plasmas, 13, 043502, 2006
+#
+#-------------------------------------
+
+NAME = NO
+
+#-------------------------------------
+#Molecular mass [kg/mol]
+MOLAR_MASS = 30.0061d-3
+
+#-------------------------------------
+#Number of atoms 
+NB_ATOMS = 2
+
+#-------------------------------------
+#Chemical elements (symbols and quantities)
+ELEM_NAME  = N O
+ELEM_QUANT = 1 1
+ 
+#--------------------------------------
+#Formation energya at 0 K (from Ref. [5] above)  [J/mol]
+EF = 90.54d3
+
+#--------------------------------------
+#Dissociation energy
+DE = 6.496d0
+
+#--------------------------------------
+#Electric charge
+CHARGE = 0
+
+#--------------------------------------
+#Ionization potential (from Ref. [8] above) [eV]
+IP = 9.264d0
+
+#--------------------------------------
+#Linearity
+LIN = 1
+
+#--------------------------------------
+#Symmetry factor
+SYM = 1.d0
+
+#--------------------------------------
+#Lennard-Jones parameters (from Ref. [9] above)
+# - diameter [A]
+# - potential well-depth [K]
+LJ_DIAM = 3.599d0
+LJ_EPS  = 91.d0
+
+#--------------------------------------
+#Polarizability (from Ref. [3] above) [A^3]
+POLAR = 1.698d0
+
+#--------------------------------------
+#Thermal model for internal energy (e.g. RR, HO, EL, RR_HO,...,)
+#RR = Rigid-rotor
+#HO = Harmomic-oscillator
+#EL = Electronic energy computed based on a Boltzmann distribution of electronic levels 
+#NONE = pure State-to-State approach for internal energy levels
+MODEL = RR_HO_EL
+
+#--------------------------------------
+#Characteristic rotational temperature (from Ref. [2] above) [K]
+THETA_ROT = 2.4055630003427542d0
+
+#--------------------------------------
+#Characteristic vibrational temperature (from Ref. [5] above) [K]
+THETA_VIB = 2739.6254096460120d0
+
+#--------------------------------------
+#Electronic levels degeneracies and energies (from Ref. [10] above) [eV]
+NB_ELEC_LEVELS = 5
+0.400000e+01  0.000000e+00
+0.200000e+01  0.545104e+01
+0.400000e+01  0.569480e+01
+0.400000e+01  0.647019e+01
+0.400000e+01  0.748412e+01
