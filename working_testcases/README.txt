@@ -25,3 +25,11 @@ Solution strategy
 - Gradually increase CFL for HEGEL convergence
 - Required larger hegel iterations for watchpoint convergence and coupling stability 
 - Required delayed freezing start and smaller pato-precice time steps
+
+4. PARK5 with hear flux enables (stagline_pato_PARK5_Q)
+-----------------------------------------------------------------------
+
+- All data exchange is now active 
+- Use heat flux disabled solution to restart with PARK5 surface chemistry
+- Decreased A_Bo to 0.43, increased E_Bo to 1360, decreased A_Bo2 to 0.005 and increased E_Bo2 to 1550
+This reduces the rate of CO production and stabilizes the coupling
