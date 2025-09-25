@@ -1,0 +1,5 @@
+#!/bin/bash
+#
+#
+
+mpiexec -np 1 hegel NS_1D_NLTE_air11_SL

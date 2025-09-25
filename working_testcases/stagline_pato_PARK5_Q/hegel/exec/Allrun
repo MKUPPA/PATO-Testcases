@@ -1,0 +1,10 @@
+# Print executed commands
+set -e
+
+# Group solvers to stop all if one fails
+set -m
+(
+    ./runHEGEL > HEGEL.log &
+    ./runPATO > PATO.log &
+    wait
+)

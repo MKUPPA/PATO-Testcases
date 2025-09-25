@@ -1,0 +1,69 @@
+#-------------------------------------
+#Species file for C5
+#-------------------------------------
+NAME = C5
+
+#-------------------------------------
+#Molecular mass [kg/mol]
+MOLAR_MASS = 60.05e-3
+
+#-------------------------------------
+#Number of atoms 
+NB_ATOMS = 5
+
+#-------------------------------------
+#Chemical elements (symbols and quantities)
+ELEM_NAME = C 
+ELEM_QUANT = 5
+ 
+#--------------------------------------
+#Formation energy [J/mol]
+EF = 1061.190e+03
+
+#--------------------------------------
+#Electric charge
+CHARGE = 0
+
+#--------------------------------------
+# Ionization potential -- unknown  -- unknown I am using C2 value
+IP = 11.4d0
+
+#--------------------------------------
+#Linearity
+LIN = 1
+
+#--------------------------------------
+#Symmetry factor
+SYM = 2.0e+00
+
+#--------------------------------------
+#Lennard-Jones parameters  -- unknown I am using C2 value
+# - diameter [A]
+# - potential well-depth [K]
+LJ_DIAM = 3.245d0
+LJ_EPS  = 535.3d0
+
+#--------------------------------------
+#Polarizability [A^3] 
+#From R. L. Jaffe (NASA Ames)
+POLAR = 10.49d0
+
+#--------------------------------------
+#Thermal model for internal energy (e.g. RR, HO, EL, RR_HO,...,)
+#RR = Rigid-rotor
+#HO = Harmomic-oscillator
+#EL = Electronic energy computed based on a Boltzmann distribution of electronic levels 
+#NONE = pure State-to-State approach for internal energy levels
+MODEL = RR_HO_EL
+
+#--------------------------------------
+#Characteristic rotational temperature [K]
+THETA_ROT = 0.123
+
+#--------------------------------------
+#Characteristic vibrational temperature(s) [K]
+THETA_VIB = 168.736 168.736 328.316 328.316 783.208 783.208 1108.655 2078.554 2844.650 3148.518
+
+#--------------------------------------
+#Electronic levels degeneracies and energies [eV]
+NB_ELEC_LEVELS = 0

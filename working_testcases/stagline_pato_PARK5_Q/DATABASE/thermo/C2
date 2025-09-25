@@ -1,0 +1,96 @@
+#-------------------------------------
+#Species file for C2
+#-------------------------------------
+
+#-------------------------------------
+# References ([1-4] from https://cccbdb.nist.gov/exp2x.asp webpage):
+#
+# 1) Huber, K. P.; Herzberg, G., Molecular Spectra and Molecular Structure. IV. Constants of Diatomic Molecules, Van Nostrand Reinhold Co., 1979
+#
+# 2) Gurvich, L. V.; Veyts, I. V.; Alcock, C. B., Thermodynamic Properties of Individual Substances, Fouth Edition, Hemisphere Pub. Co., New York, 1989
+#
+# 3) Irikura, K. K., "Experimental Vibrational Zero-Point Energies: Diatomic Molecules" J. Phys. Chem. Ref. Data 36(2), 389, 2007
+#
+# 4) NIST Chemistry Webbook (http://webbook.nist.gov/chemistry)
+#
+# 5) Capitelli, M.; Laricchiuta, A.; Bruno. D., Fundamental Aspects of Plasma Physics. Transport, Springer, 2013  
+# 
+# 6) Park, C; Jaffe, R. L., Partridge, Chemical-kinetic Parameters for Hyperboic Earth Entry, J. Thermophys. Heat Transfer, 15(1), 76--90, 2001
+#
+#-------------------------------------
+
+NAME = C2
+
+#-------------------------------------
+#Molecular mass [kg/mol]
+MOLAR_MASS = 24.022d-3
+
+#-------------------------------------
+#Number of atoms 
+NB_ATOMS = 2
+
+#-------------------------------------
+#Chemical elements (symbols and quantities)
+ELEM_NAME  = C 
+ELEM_QUANT = 2
+ 
+#--------------------------------------
+#Formation energy at 0 K (from Ref. [2] above) [J/mol]
+EF = 822.39d3
+
+#--------------------------------------
+#Electric charge
+CHARGE = 0
+
+#--------------------------------------
+# Ionization potential (from Ref. [4] above) [eV]
+IP = 11.4d0
+
+#--------------------------------------
+#Linearity
+LIN = 1
+
+#--------------------------------------
+#Symmetry factor
+SYM = 2.d0
+
+#--------------------------------------
+#Lennard-Jones parameters (from Ref. [6] above) 
+# - diameter [A]
+# - potential well-depth [K]
+LJ_DIAM = 3.913d0 
+LJ_EPS  = 78.8d0
+
+#--------------------------------------
+#Polarizability (from Table 11.1 of Ref. [5] above) [A^3] 
+POLAR = 2.4d0
+
+#--------------------------------------
+#Thermal model for internal energy (e.g. RR, HO, EL, RR_HO,...,)
+#RR = Rigid-rotor
+#HO = Harmomic-oscillator
+#EL = Electronic energy computed based on a Boltzmann distribution of electronic levels 
+#NONE = pure State-to-State approach for internal energy levels
+MODEL = RR_HO_EL
+
+#--------------------------------------
+#Characteristic rotational temperature (from Ref. [3] above) [K]
+THETA_ROT = 2.6186458559010912d0
+
+#--------------------------------------
+#Characteristic vibrational temperature (from Ref. [3] above) [K]
+THETA_VIB = 2669.0260670437701d0
+
+#--------------------------------------
+#Electronic levels degeneracies and energies  [eV]
+NB_ELEC_LEVELS = 10 
+0.100000E+01  0.000000E+00
+0.600000E+01  0.887968E-01
+0.300000E+01  0.797745E+00
+0.200000E+01  0.104038E+01
+0.300000E+01  0.114404E+01
+0.200000E+01  0.188206E+01
+0.100000E+01  0.232344E+01
+0.600000E+01  0.248245E+01
+0.100000E+02  0.278962E+01
+0.500000E+01  0.377839E+01

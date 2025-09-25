@@ -1,0 +1,5 @@
+#HEGEL:: CFL history file
+#Iter CFL
+       0   0.200000E+01
+    1000   0.200000E+01
+    1000   0.400000E+01

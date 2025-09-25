@@ -1,0 +1,102 @@
+Units=cm^3/(mol*s)
+
+#---------------------------
+#References: 
+#
+#  Park, C. "Review of chemical-kinetic problems of future NASA missions, I: Earth entries", J. Thermophys. Heat Transfer, 
+#  Vol. 7, No. 3, 385--398, 1993
+#  All carbon related mechanism have been added using the following reference
+#  Johnston, C. "Study of Aerothermodynamic Modeling Issues Relevant to High-Speed Sample Return Vehicles", STO-AVT-218 - 
+#  Radiation and Gas-Surface Interaction Phenomena in High Speed Re-Entry, 2014
+
+#Heavy-particle impact dissociation
+N2+M=N+N+M:3.0E+22,-1.6d0,113200.d0,1
+M=N,C,O,Np,Op,Cp
+N2+M=N+N+M:7.0E+21,-1.6d0,113200.d0,1
+M=N2,NO,O2,CO,CO2,CN,C2,C3,N2p,NOp,O2p,COp,CNp
+O2+M=O+O+M:1.0E+22,-1.50d0,59500.d0,1
+M=N,C,O,Np,Op,Cp
+O2+M=O+O+M:2.0E+21,-1.5d0,59500.d0,1
+M=N2,NO,O2,CO,CO2,CN,C2,C3,N2p,NOp,O2p,COp,CNp
+NO+M=N+O+M:1.1E+17,0.d0,75500.d0,1
+M=N,C,O,Np,Op,Cp
+NO+M=N+O+M:5.0E+15,0.d0,75500.d0,1
+M=N2,NO,O2,CO,CO2,CN,C2,C3,N2p,NOp,O2p,COp,CNp
+#Heavy-particle impact dissociation -- addition of C related species
+CO2+M=CO+O+M:1.38E+22,-1.50d0,63280,1
+M=N,C,O,Np,Op,Cp
+# CO2+M=CO+O+M:6.9E+20,-1.50d0,63280,1
+# M=Ar
+CO2+M=CO+O+M:6.9E+21,-1.50d0,63280,1
+M=N2,NO,O2,CO,CO2,CN,C2,C3,N2p,NOp,O2p,COp,CNp
+CO+M=C+O+M:1.80E+21,-1.00d0,129000,1
+M=N,C,O,Np,Op,Cp
+# CO+M=C+O+M:1.20E+20,-1.00d0,129000,1
+# M=Ar
+CO+M=C+O+M:1.20E+21,-1.00d0,129000,1
+M=N2,NO,O2,CO,CO2,CN,C2,C3,N2p,NOp,O2p,COp,CNp
+C2+M=C+C+M:4.50E+18,-1.00d0,71500,1
+M=N,C,O,Np,Op,Cp,N2,NO,O2,CO,CO2,CN,C2,C3,N2p,NOp,O2p,COp,CNp
+CN+M=C+N+M:6.00E+15,-4.00d-1,71000,1
+M=N,C,O,Np,Op,Cp,N2,NO,O2,CO,CO2,CN,C2,C3,N2p,NOp,O2p,COp,CNp
+C3+M=C2+M+C:1.60E+21,-1.50d0,87740,1
+M=C,N,O,Np,Op,Cp
+C3+M=C2+M+C:8.40E+20,-1.50d0,87740,1
+M=N2,NO,O2,CO,CO2,CN,C2,C3,N2p,NOp,O2p,COp,CNp
+# C5+M=C3+C2+M:4.00E+14,0.00d0,81549,1
+# M=N,C,O,Np,Op,Cp,N2,NO,O2,CO,CO2,CN,C2,C3,C5,N2p,NOp,O2p,COp,CNp
+
+#Electron impact dissociation
+N2+em=N+N+em:1.2E+25,-1.6d0,113200.d0,4
+
+#Electron impact ionization
+N+em=Np+em+em:2.5E+34,-3.82d0,168600.d0,9
+O+em=Op+em+em:3.9E+33,-3.78d0,158500.d0,9
+#Electron impact ionization -- addition of C related species
+C+em=Cp+em+em:3.9E+33,-3.78d0,130700.d0,9
+CO+em=COp+em+em:4.5E+14,0.275d0,163000.d0,9
+
+#Exchange (Zel'dovich reactions)
+NO+O=O2+N:8.4E+12,0.0d0,19450.d0,6
+N2+O=NO+N:6.4E+17,-1.d0,38400.d0,6
+#Exchange (Zel'dovich reactions) -- addition of C related species
+CO2+O=O2+CO:2.71E+14,0.d0,33800.d0,6
+CO+C=C2+O:2.40E+17,-1.d0,58000.d0,6
+CO+N=CN+O:1.00E+15,0.d0,38600.d0,6
+CO+NO=CO2+N:3.00E+6,0.88d0,13300.d0,6
+CO+O=O2+C:3.90E+13,-0.18d0,69200.d0,6
+C2+N2=CN+CN:1.50E+13,-0.0d0,21000.d0,6
+CN+C=C2+N:3.00E+14,-0.0d0,18100.d0,6
+CN+O=CO+N:1.60E+12,-0.0d0,14600.d0,6
+N+CO=NO+C:1.1E+14,0.7d-1,53500.d0,6
+N2+C=CN+N:1.1E+14,-0.11d0,23200.d0,6
+N2+CO=CN+NO:1.2E+16,-1.23d0,77000.d0,6
+C3+C=C2+C2:6.00E+11,1.07d0,16500.d0,6
+C3+N=CN+C2:1.00E+12,0.00d0,34200d0,6
+CO+C2=C3+O:1.00E+12,0.00d0,41200d0,6
+
+#Associative ionization
+O+O=O2p+em:7.1E+2,2.7d0,80600.d0,10
+N+N=N2p+em:4.4E+7,1.5d0,67500.d0,10
+O+N=NOp+em:8.8E+8,1.d0,31900.d0,10
+#Associative ionization -- addition of C related species
+C+O=COp+em:8.8E+8,1.d0,33100.d0,10
+C+N=CNp+em:1.0E+15,1.5d0,164440.d0,10
+
+#Charge exchange
+O+NOp=Np+O2:1.0E+12,0.5d0,77200.d0,6
+N2+Np=N+N2p:1.0E+12,0.5d0,12200.d0,6
+N+O2p=O2+Np:8.7E+13,0.14d0,28600.d0,6
+NO+Op=O2+Np:1.4E+5,1.9d0,26600.d0,6
+N2+O2p=O2+N2p:9.9E+12,0.d0,40700.d0,6
+O+O2p=O2+Op:4.0E+12,-0.09d0,18000.d0,6
+N+NOp=Op+N2:3.4E+13,-1.08d0,12800.d0,6
+NOp+O2=O2p+NO:2.4E+13,0.41d0,32600.d0,6
+NOp+O=O2p+N:7.2E+12,0.29d0,48600.d0,6
+Op+N2=N2p+O:9.1E+11,0.36d0,22800.d0,6
+NOp+N=N2p+O:7.2E+13,0.d0,35500.d0,6
+#Charge exchange -- addition of C related species
+Cp+CO=C+COp:1.0E+13,0.d0,31400.d0,6
+NOp+C=Cp+NO:1.0E+13,0.d0,23200.d0,6
+O2p+C=Cp+O2:1.0E+13,0.d0,9400.d0,6
+Cp+N2=N2p+C:1.11E+14,-1.1d-1,50000.d0,6
